@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "babel-loader": "^8.2.4",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "scripts": {
+    "build": "webpack --watch",
+    "build-sass": "sass ./styles.scss ./styles.css --watch"
+  }
+}
