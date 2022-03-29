@@ -8,5 +8,8 @@
   "scripts": {
     "build": "webpack --watch",
     "build-sass": "sass ./styles.scss ./styles.css --watch"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.16.11"
   }
 }

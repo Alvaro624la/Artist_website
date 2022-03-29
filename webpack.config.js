@@ -1,4 +1,6 @@
-const config = {
+var path = require('path');
+
+module.exports = {
     entry: "./src/app.js",
     output: {
         filename: 'bundle.js',
@@ -17,6 +19,6 @@ const config = {
             }
         }
         ],
-        mode: 'development',
-    }
+    },
+    mode: 'development',
 }
