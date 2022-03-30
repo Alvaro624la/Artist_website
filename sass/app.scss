@@ -1,11 +1,6 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-    background-color: blue;
-    &:hover{
-        cursor: pointer;
-    }
-}
+@import 'pages/lmguzman';
+@import 'pages/shop';
+@import 'pages/about';
+@import 'pages/contact';
+@import 'variables';
+@import 'clases';

@@ -15,7 +15,7 @@
   \********************/
 /***/ (() => {
 
-eval("(function () {\n  alert('hola');\n});\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("/*\r\nimport * as \"variables\" from \"./modulos/variables\";\r\nimport * as \"funciones\" from \"./modulos/funciones\";\r\nimport * as \"bootstrap\" from \"./modulos/bootstrap\";\r\n*/\n(function () {\n  alert('hola');\n});\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ })
 
