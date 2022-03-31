@@ -13,6 +13,38 @@
 .contact {
   font-family: "Montserrat", sans-serif, Helvetica, sans-serif, Arial;
 }
+.contact__nav {
+  font-family: "Montserrat", sans-serif, Helvetica, sans-serif, Arial;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.contact__nav__ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+.contact__nav__ul__li {
+  margin: 20px 30px;
+  padding: 0;
+}
+.contact__nav__ul__li__a {
+  text-decoration: none;
+  color: #000;
+}
+.contact__nav__ul__li__a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: #ab2525;
+  display: block;
+  transition: width 0.3s;
+}
+.contact__nav__ul__li__a:hover::after {
+  width: 100%;
+}
 .contact__main {
   margin-top: 100px;
 }
@@ -31,6 +63,7 @@
   color: #000;
 }
 .contact__main__mailto__btn {
+  cursor: pointer;
   display: inline-block;
   padding: 0.75rem 1.25rem;
   border-radius: 10rem;
@@ -42,7 +75,7 @@
   overflow: hidden;
   z-index: 1;
 }
-.contact__main__mailto__btn:after {
+.contact__main__mailto__btn::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -53,7 +86,7 @@
   border-radius: 10rem;
   z-index: -2;
 }
-.contact__main__mailto__btn:before {
+.contact__main__mailto__btn::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -68,7 +101,7 @@
 .contact__main__mailto__btn:hover {
   color: #fff;
 }
-.contact__main__mailto__btn:hover:before {
+.contact__main__mailto__btn:hover::before {
   width: 100%;
 }
 .contact__main__mailto__btn:active {
@@ -82,10 +115,7 @@
 }
 .contact__main__tlf-cont__btn {
   display: inline-block;
-  outline: 0;
-  border: 0;
   cursor: pointer;
-  will-change: box-shadow, transform;
   background: radial-gradient(100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100%);
   box-shadow: 0px 2px 4px rgba(45, 35, 66, 0.4), 0px 7px 13px -3px rgba(45, 35, 66, 0.3), inset 0px -3px 0px rgba(58, 65, 111, 0.5);
   border-radius: 6px;
@@ -117,6 +147,7 @@
   justify-content: center;
 }
 .contact__main__redes-cont__instagram-cont, .contact__main__redes-cont__facebook-cont {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;

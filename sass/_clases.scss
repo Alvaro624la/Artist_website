@@ -1,0 +1,37 @@
+@mixin navbar {
+    font-family: 'Montserrat', sans-serif, Helvetica, sans-serif, Arial;
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+    &__ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        
+        &__li{
+            margin: 20px 30px;
+            padding: 0;
+
+            &__a{
+                text-decoration: none;
+                color: #000;
+        
+                &::after{
+                    content: "";
+                    width: 0%;
+                    height: 3px;
+                    background-color: $red;
+                    display: block;
+                    transition: width 0.3s;
+                }
+        
+                &:hover::after{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
