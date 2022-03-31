@@ -11,24 +11,104 @@
 }
 
 .contact {
-  background-image: url("../src/img/example.jpg");
-  background-size: cover;
+  font-family: "Montserrat", sans-serif, Helvetica, sans-serif, Arial;
+}
+.contact__main {
+  margin-top: 100px;
 }
 .contact__main__title {
+  font-size: 2em;
+  font-weight: 500;
   text-align: center;
+  margin-bottom: 100px;
 }
 .contact__main__mailto {
   display: grid;
   justify-items: center;
+  margin-bottom: 100px;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #000;
+}
+.contact__main__mailto__btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.contact__main__mailto__btn:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ab2525;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.contact__main__mailto__btn:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #6c1717;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+.contact__main__mailto__btn:hover {
+  color: #fff;
+}
+.contact__main__mailto__btn:hover:before {
+  width: 100%;
+}
+.contact__main__mailto__btn:active {
+  transform: scale(0.9);
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
 }
 .contact__main__tlf-cont {
   display: grid;
   justify-items: center;
+  margin-bottom: 100px;
 }
 .contact__main__tlf-cont__btn {
-  background-color: rgba(22, 202, 5, 0.473);
-  border: 4px solid black;
-  border-radius: 10px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow, transform;
+  background: radial-gradient(100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100%);
+  box-shadow: 0px 2px 4px rgba(45, 35, 66, 0.4), 0px 7px 13px -3px rgba(45, 35, 66, 0.3), inset 0px -3px 0px rgba(58, 65, 111, 0.5);
+  border-radius: 6px;
+  padding: 6px;
+  color: #fff;
+  height: 100%;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.contact__main__tlf-cont__btn:hover {
+  box-shadow: 0px 4px 8px rgba(45, 35, 66, 0.4), 0px 7px 13px -3px rgba(45, 35, 66, 0.3), inset 0px -3px 0px #3c4fe0;
+  transform: translateY(-2px);
+}
+.contact__main__tlf-cont__btn:active {
+  box-shadow: inset 0px 3px 7px #3c4fe0;
+  transform: translateY(2px);
+}
+.contact__main__tlf-cont__btn__img {
+  width: 80px;
+}
+.contact__main__tlf-cont__numero {
+  margin-top: 10px;
+  font-size: 1.2em;
 }
 .contact__main__redes-cont {
   display: flex;
@@ -39,6 +119,21 @@
 .contact__main__redes-cont__instagram-cont, .contact__main__redes-cont__facebook-cont {
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  place-items: center;
+  padding: 10px;
+}
+.contact__main__redes-cont__instagram-cont__img, .contact__main__redes-cont__facebook-cont__img {
+  width: 60px;
+}
+.contact__main__redes-cont__instagram-cont__img:hover, .contact__main__redes-cont__facebook-cont__img:hover {
+  filter: drop-shadow(0px 0px 20px #c211da);
+}
+.contact__main__redes-cont__instagram-cont__p, .contact__main__redes-cont__facebook-cont__p {
+  font-size: 1.1em;
+}
+.contact__main__redes-cont__facebook-cont__img:hover {
+  filter: drop-shadow(6px 6px 10px #2d59aa);
 }
 
 /*# sourceMappingURL=app.css.map */
