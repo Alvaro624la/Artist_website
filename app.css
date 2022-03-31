@@ -243,8 +243,8 @@
 .contact__main__tlf-cont__btn {
   display: inline-block;
   cursor: pointer;
-  background: radial-gradient(100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100%);
-  box-shadow: 0px 2px 4px rgba(45, 35, 66, 0.4), 0px 7px 13px -3px rgba(45, 35, 66, 0.3), inset 0px -3px 0px rgba(58, 65, 111, 0.5);
+  background: radial-gradient(100% 100% at 100% 0%, #ff5353 0%, #ab2525 100%);
+  box-shadow: 0px 2px 4px rgba(45, 35, 66, 0.4), 0px 7px 13px -3px rgba(45, 35, 66, 0.3), inset 0px -3px 0px rgba(171, 37, 37, 0.5);
   border-radius: 6px;
   padding: 6px;
   color: #fff;
@@ -253,11 +253,11 @@
   transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 .contact__main__tlf-cont__btn:hover {
-  box-shadow: 0px 4px 8px rgba(45, 35, 66, 0.4), 0px 7px 13px -3px rgba(45, 35, 66, 0.3), inset 0px -3px 0px #3c4fe0;
+  box-shadow: 0px 4px 8px rgba(45, 35, 66, 0.4), 0px 7px 13px -3px rgba(45, 35, 66, 0.3), inset 0px -3px 0px #ab2525;
   transform: translateY(-2px);
 }
 .contact__main__tlf-cont__btn:active {
-  box-shadow: inset 0px 3px 7px #3c4fe0;
+  box-shadow: inset 0px 3px 7px #ab2525;
   transform: translateY(2px);
 }
 .contact__main__tlf-cont__btn__img {
