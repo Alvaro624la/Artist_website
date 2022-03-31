@@ -4,6 +4,135 @@
   box-sizing: border-box;
 }
 
+.home {
+  font-family: "Montserrat", sans-serif, Helvetica, sans-serif, Arial;
+}
+.home__nav {
+  font-family: "Montserrat", sans-serif, Helvetica, sans-serif, Arial;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.home__nav__ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+.home__nav__ul__li {
+  margin: 20px 30px;
+  padding: 0;
+}
+.home__nav__ul__li__a {
+  text-decoration: none;
+  color: #000;
+}
+.home__nav__ul__li__a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: #ab2525;
+  display: block;
+  transition: width 0.3s;
+}
+.home__nav__ul__li__a:hover::after {
+  width: 100%;
+}
+.home__main {
+  margin-top: 100px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.shop {
+  font-family: "Montserrat", sans-serif, Helvetica, sans-serif, Arial;
+}
+.shop__nav {
+  font-family: "Montserrat", sans-serif, Helvetica, sans-serif, Arial;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.shop__nav__ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+.shop__nav__ul__li {
+  margin: 20px 30px;
+  padding: 0;
+}
+.shop__nav__ul__li__a {
+  text-decoration: none;
+  color: #000;
+}
+.shop__nav__ul__li__a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: #ab2525;
+  display: block;
+  transition: width 0.3s;
+}
+.shop__nav__ul__li__a:hover::after {
+  width: 100%;
+}
+.shop__main {
+  margin-top: 100px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.about {
+  font-family: "Montserrat", sans-serif, Helvetica, sans-serif, Arial;
+}
+.about__nav {
+  font-family: "Montserrat", sans-serif, Helvetica, sans-serif, Arial;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.about__nav__ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+.about__nav__ul__li {
+  margin: 20px 30px;
+  padding: 0;
+}
+.about__nav__ul__li__a {
+  text-decoration: none;
+  color: #000;
+}
+.about__nav__ul__li__a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: #ab2525;
+  display: block;
+  transition: width 0.3s;
+}
+.about__nav__ul__li__a:hover::after {
+  width: 100%;
+}
+.about__main {
+  margin-top: 100px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -15,7 +144,7 @@
 }
 .contact__nav {
   font-family: "Montserrat", sans-serif, Helvetica, sans-serif, Arial;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
 }
@@ -52,19 +181,17 @@
   font-size: 2em;
   font-weight: 500;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 90px;
 }
-.contact__main__mailto {
-  display: grid;
-  justify-items: center;
-  margin-bottom: 100px;
+.contact__main__mail-cont {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 90px;
   font-size: 1.2em;
-  text-decoration: none;
-  color: #000;
 }
-.contact__main__mailto__btn {
+.contact__main__mail-cont__btn {
+  text-decoration: none;
   cursor: pointer;
-  display: inline-block;
   padding: 0.75rem 1.25rem;
   border-radius: 10rem;
   color: #fff;
@@ -75,7 +202,7 @@
   overflow: hidden;
   z-index: 1;
 }
-.contact__main__mailto__btn::after {
+.contact__main__mail-cont__btn::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -86,7 +213,7 @@
   border-radius: 10rem;
   z-index: -2;
 }
-.contact__main__mailto__btn::before {
+.contact__main__mail-cont__btn::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -98,20 +225,20 @@
   border-radius: 10rem;
   z-index: -1;
 }
-.contact__main__mailto__btn:hover {
+.contact__main__mail-cont__btn:hover {
   color: #fff;
 }
-.contact__main__mailto__btn:hover::before {
+.contact__main__mail-cont__btn:hover::before {
   width: 100%;
 }
-.contact__main__mailto__btn:active {
+.contact__main__mail-cont__btn:active {
   transform: scale(0.9);
   box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
 }
 .contact__main__tlf-cont {
   display: grid;
   justify-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 .contact__main__tlf-cont__btn {
   display: inline-block;

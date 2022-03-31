@@ -1,0 +1,26 @@
+@import "../clases", "../variables";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// ABOUT
+.about{ //body (of contact page)
+    font-family: 'Montserrat', sans-serif, Helvetica, sans-serif, Arial;
+    // background:{
+    //     image: url('../src/img/example.jpg');
+    // }
+    // background: radial-gradient(ellipse at top, #cf7676, transparent),
+    //         radial-gradient(ellipse at bottom, #424ebd, transparent);
+    // height: 100vh;
+
+    &__nav{
+        @include navbar();
+    }
+
+    &__main{
+        margin-top: 100px;
+    }
+}
