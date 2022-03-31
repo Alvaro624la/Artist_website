@@ -4,11 +4,41 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: blue;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-body:hover {
-  cursor: pointer;
+
+.contact {
+  background-image: url("../src/img/example.jpg");
+  background-size: cover;
+}
+.contact__main__title {
+  text-align: center;
+}
+.contact__main__mailto {
+  display: grid;
+  justify-items: center;
+}
+.contact__main__tlf-cont {
+  display: grid;
+  justify-items: center;
+}
+.contact__main__tlf-cont__btn {
+  background-color: rgba(22, 202, 5, 0.473);
+  border: 4px solid black;
+  border-radius: 10px;
+}
+.contact__main__redes-cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contact__main__redes-cont__instagram-cont, .contact__main__redes-cont__facebook-cont {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=app.css.map */
