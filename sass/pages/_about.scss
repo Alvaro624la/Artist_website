@@ -20,7 +20,49 @@
         @include navbar();
     }
 
-    &__main{
+    &__header{
         margin-top: 100px;
+        
+        &__title{
+            @include header-title();
+            margin-bottom: 25px;
+        }
+        &__img{
+            width: 50%;
+            height: 40%;
+            transform: translate(50%);
+        }
+    }
+
+    &__main{
+
+        &__title-1{
+            @include about-title();
+        }
+        &__title-2{
+            @include about-title();
+        }
+        &__title-3{
+            @include about-title();
+        }
+        &__title-4{
+            @include about-title();
+        }
+        &__description-0{
+            @include about-description();
+            margin: 15px 25px 42px 25px; // 25px (left & right)
+        }
+        &__description-1{
+            @include about-description();
+        }
+        &__description-2{
+            @include about-description();
+        }
+        &__description-3{
+            @include about-description();
+        }
+        &__description-4{
+            @include about-description();
+        }
     }
 }
