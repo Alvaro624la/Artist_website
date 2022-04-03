@@ -148,3 +148,39 @@
         }
     }
 }
+
+//MEDIA QUERIES
+// Extra large devices (large desktops, 1200px and up)
+// No media queries
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 1200px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 992px) {}
+
+// Landscape phones (576px and up)
+@media (max-width: 768px) {}
+
+// Portrait phones (340px and up)
+@media (max-width: 576px) {}
+
+//  Smart phones (0px and up)
+@media (max-width: 340px) {}
+
+// Personalizado
+@media (max-width: 250px) {
+    .contact{
+        &__main{        
+            &__mail-cont{
+                font-size: 1em;
+    
+                &__btn{
+                    padding: .75rem 0.75rem;
+                    letter-spacing: .05rem;
+                }
+                
+            }
+        }
+    }
+}
