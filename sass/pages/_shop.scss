@@ -19,15 +19,48 @@
     &__nav{
         @include navbar();
     }
-
-    &__main{
+    &__hamburguer-nav{
+        display: none;
+        cursor: pointer;
+        
+        &__bar{
+            @include hamburguer-btn();
+        }
+    }
+    &__header{
         margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+
+        &__title{
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+        &__img{
+            width: 50%;
+        }
     }
 }
 
 //MEDIA QUERIES
 // Extra large devices (large desktops, 1200px and up)
-// No media queries
+@media (min-width: 1200px) {
+    .shop{ //body (of contact page)
+        &__header{
+    
+            &__title{
+                text-align: center;
+                font-size: 1.6em;
+                font-weight: 600;
+            }
+            &__img{
+                width: 500px;
+            }
+        }
+    }
+}
 
 // Large devices (desktops, 992px and up)
 @media (max-width: 1200px) {}
@@ -39,7 +72,18 @@
 @media (max-width: 768px) {}
 
 // Portrait phones (340px and up)
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+    .shop{
+        @include responsivenavs();
+    }
+}
+
+// //Personalizado
+// @media (max-width: 485px) {
+//     .shop{
+//         @include responsivenavs();
+//     }
+// }
 
 //  Smart phones (0px and up)
 @media (max-width: 340px) {}

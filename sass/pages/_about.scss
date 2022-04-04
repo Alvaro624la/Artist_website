@@ -21,7 +21,14 @@
     &__nav{
         @include navbar();
     }
-
+    &__hamburguer-nav{
+        display: none;
+        cursor: pointer;
+        
+        &__bar{
+            @include hamburguer-btn();
+        }
+    }
     &__header{
         margin-top: 100px;
         
@@ -71,7 +78,44 @@
 
 //MEDIA QUERIES
 // Extra large devices (large desktops, 1200px and up)
-// No media queries
+@media (min-width: 1200px) {
+    .about{ //body (of contact page)
+        font-family: 'Montserrat', sans-serif, Helvetica, sans-serif, Arial;
+        // background:{
+        //     image: url('../src/img/example.jpg');
+        // }
+        // background: radial-gradient(ellipse at top, #cf7676, transparent),
+        //         radial-gradient(ellipse at bottom, #424ebd, transparent);
+        // height: 100vh;
+    
+        &__nav{
+            @include navbar();
+        }
+        &__hamburguer-nav{
+            display: none;
+            cursor: pointer;
+            
+            &__bar{
+                @include hamburguer-btn();
+            }
+        }
+        &__header{
+            margin-top: 100px;
+            
+            &__title{
+                @include header-title();
+                margin-bottom: 25px;
+            }
+            &__img{
+                width: 500px;
+                height: auto;
+                position: relative;
+                left: 50%;
+                transform: translate(-50%);
+            }
+        }
+    }
+}
 
 // Large devices (desktops, 992px and up)
 @media (max-width: 1200px) {}
@@ -83,7 +127,11 @@
 @media (max-width: 768px) {}
 
 // Portrait phones (340px and up)
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+    .about{
+        @include responsivenavs();
+    }
+}
 
 //  Smart phones (0px and up)
 @media (max-width: 340px) {}

@@ -15,7 +15,7 @@
   \********************/
 /***/ (() => {
 
-eval("/*\r\nimport * as \"variables\" from \"./modulos/variables\";\r\nimport * as \"funciones\" from \"./modulos/funciones\";\r\nimport * as \"bootstrap\" from \"./modulos/bootstrap\";\r\n*/\n(function () {\n  alert('hola');\n});\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("/*\r\nimport * as \"variables\" from \"./modulos/variables\";\r\nimport * as \"funciones\" from \"./modulos/funciones\";\r\nimport * as \"bootstrap\" from \"./modulos/bootstrap\";\r\n*/\nvar hamburguer = document.getElementById('hamburguer');\nvar navMenu = document.getElementById('nav-menu');\nhamburguer.addEventListener('click', function () {\n  hamburguer.classList.toggle('active');\n  navMenu.classList.toggle('active');\n});\ndocument.getElementById('nav-link').forEach(function (n) {\n  return n.addEventListener('click', function () {\n    hamburguer.classList.remove('active');\n    navMenu.classList.remove('active');\n  });\n}); // document.getElementsByTagName('body').addEventListener('click', ()=>{\n//     hamburguer.classList.remove('active');\n//     navMenu.classList.remove('active');\n// }))\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ })
 

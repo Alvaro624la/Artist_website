@@ -19,7 +19,14 @@
     &__nav{
         @include navbar();
     }
-
+    &__hamburguer-nav{
+        display: none;
+        cursor: pointer;
+        
+        &__bar{
+            @include hamburguer-btn();
+        }
+    }
     &__main{
         margin-top: 100px;
         
@@ -163,7 +170,11 @@
 @media (max-width: 768px) {}
 
 // Portrait phones (340px and up)
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+    .contact{
+        @include responsivenavs();
+    }
+}
 
 //  Smart phones (0px and up)
 @media (max-width: 340px) {}

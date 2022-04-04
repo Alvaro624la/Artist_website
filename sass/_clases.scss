@@ -1,4 +1,4 @@
-@mixin navbar {
+@mixin navbar{
     font-family: 'Montserrat', sans-serif, Helvetica, sans-serif, Arial;
     position: absolute;
     top: 0;
@@ -34,12 +34,78 @@
             }
         }
     }
-    
-    @media (max-width: 487px) {
-        //burguer btn
+}
+@mixin hamburguer-btn{
+    display: block;
+    width: 30px;
+    height: 5px;
+    margin: 5px auto;
+    transition: all .3 ease-in-out;
+    background-color: #000;
+    border-radius: 4px 0px;
+}
+//NAVBAR + HAMBURGUER-NAV MEDIA QUERIES
+@mixin responsivenavs{
+    &__nav{
+    z-index: 888;
+
+        &__ul{
+            position: fixed; //para quitarlo de la pantalla
+            left: -100%;
+            top: 0;
+            gap: 0;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, .98);
+            width: 100%;
+            text-align: center;
+            transition: .3s;    
+            height: 100%; 
+            padding-top: 40%;
+            
+            &__li{
+                margin: 20px 0px;
+                padding: 0px;
+
+                &__a{
+                    font-size: 1.3em;
+                    color: white;
+
+                    &:hover:active{
+                        transform: scale(1.1);
+                    }
+                    &:hover::after{
+                        width: 0%;
+                    }
+                }
+            }
+        }
+        &__ul.active{
+            left: 0;
+        }
+    }
+    &__hamburguer-nav{
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        z-index: 999;
+    }
+    &__hamburguer-nav.active &__hamburguer-nav__bar:nth-child(1){
+        transform: translateY(10px) rotate(45deg);
+        transition: all .3s;
+        background-color: #fff;
+    }
+    &__hamburguer-nav.active &__hamburguer-nav__bar:nth-child(2){
+        opacity: 0;
+        transition: all .3s;
+    }
+    &__hamburguer-nav.active &__hamburguer-nav__bar:nth-child(3){
+        transform: translateY(-10px) rotate(-45deg);
+        transition: all .3s;
+        background-color: #fff;
     }
 }
-@mixin header-title {
+@mixin header-title{
     font-size: 2em;
     font-weight: 500;
     text-align: center;
@@ -56,14 +122,14 @@
 
 
 // ABOUT
-@mixin about-title {
+@mixin about-title{
     margin-left: 25px;
 
     &::after{
         content: ':';
     }
 }
-@mixin about-description {
+@mixin about-description{
     text-align: justify;
     line-height: 1.3rem;
     letter-spacing: .025rem;
