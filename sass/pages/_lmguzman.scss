@@ -60,3 +60,18 @@
 
 //  Smart phones (0px and up)
 @media (max-width: 340px) {}
+
+// Carousel responsive
+@media (max-height: 883px) {
+    .home{
+        &__main{
+            margin-top: 80px;
+            background-color: black;
+        }
+    }
+    .carousel, .slide{
+        left: 50%;
+        transform: translate(-50%);
+        width: 75%;
+    }
+}
