@@ -31,9 +31,7 @@
     
         &__carousel-cont{
             width: 100%;
-            // width: 90%;
             max-width: 100%;
-            // max-width: 900px;
             margin: auto; 
             overflow: hidden;
             box-shadow: /*0 0 0 10px #fff,*/
@@ -117,16 +115,18 @@
 @media (max-width: 340px) {}
 
 // Bootstrap-carousel responsive (1440 and up (big PC's))
-// @media (min-width: 1440px) {
-//     .home{
-//         &__main{
-//             margin-top: 80px;
-//             background-color: black;
-//         }
-//     }
-//     .carousel, .slide{
-//         left: 50%;
-//         transform: translate(-50%);
-//         width: 75%;
-//     }
-// }
+@media (min-width: 1280px) {
+    .home{
+        &__main{
+            margin-top: 80px;
+            // background-color: rgba(0, 0, 0, 1);
+
+            &__carousel-cont{
+                width: 75%;
+                max-width: 2000px;
+                box-shadow: 0 0 0 10px #fff,
+                            0 15px 50px;
+            }
+        }
+    }
+}

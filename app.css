@@ -164,6 +164,16 @@
     background-color: #fff;
   }
 }
+@media (min-width: 1280px) {
+  .home__main {
+    margin-top: 80px;
+  }
+  .home__main__carousel-cont {
+    width: 75%;
+    max-width: 2000px;
+    box-shadow: 0 0 0 10px #fff, 0 15px 50px;
+  }
+}
 * {
   padding: 0;
   margin: 0;

@@ -4,6 +4,7 @@ import * as "funciones" from "./modulos/funciones";
 import * as "bootstrap" from "./modulos/bootstrap";
 */
 
+// ALL HTML PAGES
 //HAMBURGUER NAVBAR BTN
 const hamburguer = document.getElementById('hamburguer');
 const navMenu = document.getElementById('nav-menu');
@@ -22,6 +23,7 @@ function removeActive(){
 for (var i = 0; i < navLink.length; i++) {
     navLink[i].addEventListener('click', removeActive);
 }
+
 
 //HOME (/html/lmguzman.html)
 if(window.location.pathname == '/html/lmguzman.html'){
