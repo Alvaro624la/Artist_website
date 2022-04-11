@@ -128,10 +128,20 @@
     &::after{
         content: ':';
     }
+
+    // Large devices (desktops, 1024px and up)
+    @media (min-width: 1024px) {
+        margin-left: 125px;
+    }
 }
 @mixin about-description{
     text-align: justify;
     line-height: 1.3rem;
     letter-spacing: .025rem;
     margin: 15px 50px 42px 50px;
+
+    // Large devices (desktops, 1024px and up)
+    @media (min-width: 1024px) {
+        margin: 15px 150px 42px 150px;
+    }
 }

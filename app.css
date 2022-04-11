@@ -392,11 +392,21 @@
 .about__main__title-1::after {
   content: ":";
 }
+@media (min-width: 1024px) {
+  .about__main__title-1 {
+    margin-left: 125px;
+  }
+}
 .about__main__title-2 {
   margin-left: 25px;
 }
 .about__main__title-2::after {
   content: ":";
+}
+@media (min-width: 1024px) {
+  .about__main__title-2 {
+    margin-left: 125px;
+  }
 }
 .about__main__title-3 {
   margin-left: 25px;
@@ -404,11 +414,21 @@
 .about__main__title-3::after {
   content: ":";
 }
+@media (min-width: 1024px) {
+  .about__main__title-3 {
+    margin-left: 125px;
+  }
+}
 .about__main__title-4 {
   margin-left: 25px;
 }
 .about__main__title-4::after {
   content: ":";
+}
+@media (min-width: 1024px) {
+  .about__main__title-4 {
+    margin-left: 125px;
+  }
 }
 .about__main__description-0 {
   text-align: justify;
@@ -417,11 +437,21 @@
   margin: 15px 50px 42px 50px;
   margin: 15px 25px 42px 25px;
 }
+@media (min-width: 1024px) {
+  .about__main__description-0 {
+    margin: 15px 150px 42px 150px;
+  }
+}
 .about__main__description-1 {
   text-align: justify;
   line-height: 1.3rem;
   letter-spacing: 0.025rem;
   margin: 15px 50px 42px 50px;
+}
+@media (min-width: 1024px) {
+  .about__main__description-1 {
+    margin: 15px 150px 42px 150px;
+  }
 }
 .about__main__description-2 {
   text-align: justify;
@@ -429,17 +459,32 @@
   letter-spacing: 0.025rem;
   margin: 15px 50px 42px 50px;
 }
+@media (min-width: 1024px) {
+  .about__main__description-2 {
+    margin: 15px 150px 42px 150px;
+  }
+}
 .about__main__description-3 {
   text-align: justify;
   line-height: 1.3rem;
   letter-spacing: 0.025rem;
   margin: 15px 50px 42px 50px;
 }
+@media (min-width: 1024px) {
+  .about__main__description-3 {
+    margin: 15px 150px 42px 150px;
+  }
+}
 .about__main__description-4 {
   text-align: justify;
   line-height: 1.3rem;
   letter-spacing: 0.025rem;
   margin: 15px 50px 42px 50px;
+}
+@media (min-width: 1024px) {
+  .about__main__description-4 {
+    margin: 15px 150px 42px 150px;
+  }
 }
 
 @media (min-width: 1200px) {
