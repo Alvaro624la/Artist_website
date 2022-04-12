@@ -27,19 +27,73 @@
             @include hamburguer-btn();
         }
     }
-    &__header{
-        margin-top: 100px;
-        display: flex;
-        flex-direction: column;
-        place-items: center;
+    // &__header{
+    //     margin-top: 100px;
+    //     display: flex;
+    //     flex-direction: column;
+    //     place-items: center;
 
-        &__title{
-            text-align: center;
-            font-size: 1.4em;
-            font-weight: 600;
-        }
-        &__img{
-            width: 50%;
+    //     &__title{
+    //         text-align: center;
+    //         font-size: 1.4em;
+    //         font-weight: 600;
+    //     }
+    //     &__img{
+    //         width: 50%;
+    //     }
+    // }
+    &__main{
+        
+        &__grid-1{
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto;
+
+            &__nav-cont{
+                border: red 2px solid;
+
+                &__ul{
+
+                    &__index-one{
+
+                        &__index-two{
+
+                            &__index-three{
+
+                            }
+                        }
+                    }
+                }
+            }
+            &__shop-cont{
+                border: blue 2px solid;
+
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: auto;
+
+                &__card{
+
+                    &__img-cont{
+
+                        &__img{
+
+                        }
+                    }
+                    &__description-cont{
+
+                        &__name{
+
+                        }
+                        &__size{
+
+                        }
+                        &__price{
+                            
+                        }
+                    }
+                }
+            }
         }
     }
 }

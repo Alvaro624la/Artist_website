@@ -228,21 +228,20 @@
   background-color: #000;
   border-radius: 4px 0px;
 }
-.shop__header {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  place-items: center;
+.shop__main__grid-1 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
 }
-.shop__header__title {
-  text-align: center;
-  font-size: 1.4em;
-  font-weight: 600;
+.shop__main__grid-1__nav-cont {
+  border: red 2px solid;
 }
-.shop__header__img {
-  width: 50%;
+.shop__main__grid-1__shop-cont {
+  border: blue 2px solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
 }
-
 @media (min-width: 1200px) {
   .shop__header__title {
     text-align: center;
