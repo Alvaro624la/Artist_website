@@ -27,71 +27,75 @@
             @include hamburguer-btn();
         }
     }
-    // &__header{
-    //     margin-top: 100px;
-    //     display: flex;
-    //     flex-direction: column;
-    //     place-items: center;
-
-    //     &__title{
-    //         text-align: center;
-    //         font-size: 1.4em;
-    //         font-weight: 600;
-    //     }
-    //     &__img{
-    //         width: 50%;
-    //     }
-    // }
     &__main{
-        
+        margin-top: 70px;
+
         &__grid-1{
             display: grid;
             grid-template-columns: auto 1fr;
             grid-template-rows: auto;
 
             &__nav-cont{
-                border: red 2px solid;
+                // border: red 2px solid;
 
                 &__ul{
-
+                    list-style-type: none;
+                    margin: 10px;
+                    padding: 40px 20px 80px 20px;
+                    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 1);
+                    
                     &__index-one{
+                        margin-top: 10px;
+                        margin-bottom: 15px;
+                        font-size: 1.1em;
+                        font-weight: 700;
+
+                        &--checkbox{
+
+                        }
 
                         &__index-two{
+                            font-size: 1em;
+                            margin-bottom: 15px;
+                            margin-left: 10px;
+                            font-weight: 500;
 
+                            &:hover{
+                                cursor: pointer;
+                                color: $red;
+                                transform: scale(1.05);
+
+                            }
                             &__index-three{
+                                margin-bottom: 15px;
+                                margin-left: 15px;
+                                font-weight: 500;
 
+                                &::before{
+                                    content: '⤷';
+                                    padding: 0px 4px;
+                                    transform: rotateY(180deg);
+                                }
+                                &:hover{
+                                    cursor: pointer;
+                                    color: $red;
+                                    transform: scale(1.05);
+                                }
                             }
                         }
                     }
                 }
             }
             &__shop-cont{
-                border: blue 2px solid;
+                // border: #000 2px solid;
 
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-columns: auto auto auto auto;
                 grid-template-rows: auto;
+                justify-content: space-around;
 
                 &__card{
-
-                    &__img-cont{
-
-                        &__img{
-
-                        }
-                    }
-                    &__description-cont{
-
-                        &__name{
-
-                        }
-                        &__size{
-
-                        }
-                        &__price{
-                            
-                        }
-                    }
+                    @include card();
                 }
             }
         }
@@ -99,28 +103,56 @@
 }
 
 //MEDIA QUERIES
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+// Extra-big large devices (large desktops, 1500px and up)
+@media (min-width: 1500px) {
     .shop{ //body (of contact page)
-        &__header{
-    
-            &__title{
-                text-align: center;
-                font-size: 1.6em;
-                font-weight: 600;
+        &__main{
+            &__grid-1{
+                &__shop-cont{
+                    grid-template-columns: auto auto auto auto auto;
+                }
             }
-            &__img{
-                width: 500px;
+        }
+    }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1500px) {
+    .shop{ //body (of contact page)
+        &__main{
+            &__grid-1{
+                &__shop-cont{
+                    grid-template-columns: auto auto auto auto;
+                }
             }
         }
     }
 }
 
-// Large devices (desktops, 992px and up)
-@media (max-width: 1200px) {}
+// Large devices (desktops, 866px and up)
+@media (max-width: 1200px) {
+    .shop{ //body (of contact page)
+        &__main{
+            &__grid-1{
+                &__shop-cont{
+                    grid-template-columns: auto auto auto;
+                }
+            }
+        }
+    }
+}
 
 // Medium devices (tablets, 768px and up)
-@media (max-width: 992px) {}
+@media (max-width: 866px) {
+    .shop{ //body (of contact page)
+        &__main{
+            &__grid-1{
+                &__shop-cont{
+                    grid-template-columns: auto auto;
+                }
+            }
+        }
+    }
+}
 
 // Landscape phones (576px and up)
 @media (max-width: 768px) {}
@@ -129,6 +161,14 @@
 @media (max-width: 576px) {
     .shop{
         @include responsivenavs();
+
+        &__main{
+            &__grid-1{
+                &__shop-cont{
+                    grid-template-columns: auto;
+                }
+            }
+        }
     }
 }
 
@@ -140,4 +180,71 @@
 // }
 
 //  Smart phones (0px and up)
-@media (max-width: 340px) {}
+@media (max-width: 440px) {
+    .shop__main{
+        margin-top: 70px;
+
+        &__grid-1{
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+
+            &__nav-cont{
+                display: none;
+                // border: red 2px solid;
+
+                &__ul{
+                    list-style-type: none;
+                    margin: 10px;
+                    padding: 40px 20px 80px 20px;
+                    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 1);
+                    
+                    &__index-one{
+                        margin-top: 10px;
+                        margin-bottom: 15px;
+                        font-size: 1.1em;
+                        font-weight: 700;
+
+                        &--checkbox{
+
+                        }
+
+                        &__index-two{
+                            font-size: 1em;
+                            margin-bottom: 15px;
+                            margin-left: 10px;
+                            font-weight: 500;
+
+                            &:hover{
+                                cursor: pointer;
+                                color: $red;
+                                transform: scale(1.05);
+
+                            }
+                            &__index-three{
+                                margin-bottom: 15px;
+                                margin-left: 15px;
+                                font-weight: 500;
+
+                                &::before{
+                                    content: '⤷';
+                                    padding: 0px 4px;
+                                    transform: rotateY(180deg);
+                                }
+                                &:hover{
+                                    cursor: pointer;
+                                    color: $red;
+                                    transform: scale(1.05);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__shop-cont{
+                grid-template-columns: auto;
+                justify-content: center;
+            }
+        }
+    }
+}

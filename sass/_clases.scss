@@ -119,6 +119,40 @@
 
 
 //SHOP
+@mixin card{
+    padding: 15px;
+
+    &__img-cont{
+        width: 200px;
+        height: 250px;
+        box-shadow: 0 0 0 5px #fff,
+                    6px 6px 10px; 
+        margin-bottom: 15px;
+
+        &__img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__description-cont{
+        padding: 0px 6px;
+
+        &__name{
+            font-size: 1.1em;
+            font-weight: 700;
+            // color: $red;
+        }
+        &__size{
+            font-style: italic;
+        }
+        &__price{
+            font-weight: 500;
+        }
+    }  
+}
+
 
 
 // ABOUT
