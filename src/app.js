@@ -1,3 +1,4 @@
+import {objects} from "./modulos/objects.js";
 /*
 import * as "variables" from "./modulos/variables";
 import * as "funciones" from "./modulos/funciones";
@@ -96,7 +97,21 @@ if(window.location.pathname == '/html/lmguzman.html'){
 if(window.location.pathname == '/html/shop.html'){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
+    //VARIABLES
+    //seccion(shop-container)
+    const CONTAINER = document.getElementById('shop-cont');
+    //all cards
+    let allCards = document.getElementsByClassName('shop__main__grid-1__shop-cont__card');
 
+    // //mostrar todos los allCards id
+    // for (var i = 0; allCards.length > i; i++) {
+    //     console.log(allCards[i] = allCards[i].id);
+    // }
+
+    //Objetos
+    for (var i = 0; objects.length > i; i++) {
+            console.log(objects[i]);
+        }
 
 } else {};
 
