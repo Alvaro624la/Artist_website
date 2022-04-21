@@ -26,8 +26,8 @@ for (var i = 0; i < navLink.length; i++) {
 }
 
 
-//HOME (/html/lmguzman.html)
-if(window.location.pathname == '/html/lmguzman.html'){
+//HOME (/html/home.html)
+if(window.location.pathname == '/html/home.html'){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
     //CAROUSEL
@@ -49,24 +49,24 @@ if(window.location.pathname == '/html/lmguzman.html'){
     function next(){
         let sliderSectionFirst = sliderSection[0];
         SLIDER.style.marginLeft = '-200%';
-        SLIDER.style.transition = 'all 1s';
+        SLIDER.style.transition = 'all 1.4s';
         setTimeout(function(){
             SLIDER.style.transition = 'none';
             SLIDER.insertAdjacentElement('beforeend', sliderSectionFirst);
             SLIDER.style.marginLeft = '-100%';
-        }, 1000);
+        }, 1400);
     };
 
     function prev(){
         let sliderSection = document.getElementsByClassName('home__main__carousel-cont__slider__section');
         let sliderSectionLast = sliderSection[sliderSection.length - 1];
         SLIDER.style.marginLeft = '0%';
-        SLIDER.style.transition = 'all 1s';
+        SLIDER.style.transition = 'all 1.4s';
         setTimeout(function(){
             SLIDER.style.transition = 'none';
             SLIDER.insertAdjacentElement('afterbegin', sliderSectionLast);
             SLIDER.style.marginLeft = '-100%';
-        }, 1000);
+        }, 1400);
     };
 
     BTNRIGHT.addEventListener('click', function(){
