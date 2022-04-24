@@ -52,7 +52,7 @@
                     position: absolute;
                     bottom: 10px;
                     right: 10px;
-                    z-index: 999;
+                    z-index: 333;
                     transition: all .5s;
                     border-radius: 20px;
                     text-align: center;
@@ -121,6 +121,7 @@
     .home{
         &__main{
             margin-top: 150px;
+            
         }
     }
 }

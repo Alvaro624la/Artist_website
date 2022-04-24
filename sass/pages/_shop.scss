@@ -158,10 +158,8 @@
 @media (max-width: 768px) {}
 
 // Portrait phones (340px and up)
-@media (max-width: 576px) {
+@media (max-width: 658px) {
     .shop{
-        @include responsivenavs();
-
         &__main{
             &__grid-1{
                 &__shop-cont{
@@ -169,6 +167,12 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 576px) {
+    .shop{
+        @include responsivenavs();
     }
 }
 
