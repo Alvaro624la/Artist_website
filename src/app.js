@@ -97,6 +97,32 @@ if(window.location.pathname == '/html/home.html'){
 if(window.location.pathname == '/html/shop.html'){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
+    //ADD TO CART - BTN:
+    //VARIABLES
+    const ADDBTN = document.getElementById('add-btn');
+    let cardImg = document.getElementById('card-img');
+
+    //FUNCIONES
+    let addToCart = function(){
+        cardImg.addEventListener('mouseover', ()=>{
+            ADDBTN.style.display = 'block';
+        });
+        cardImg.addEventListener('mouseout', ()=>{
+            ADDBTN.style.display = 'none';
+        });
+    };
+    addToCart();
+
+    // for(let i = 0; i <= cardImg.length -1; i++){
+    //     cardImg[i].addEventListener('mouseover', ()=>{
+    //         ADDBTN.style.display = 'block';
+    //     })
+    // };
+    
+
+
+
+    //CART:
     //VARIABLES
     //seccion(shop-container)
     const CONTAINER = document.getElementById('shop-cont');
@@ -110,7 +136,7 @@ if(window.location.pathname == '/html/shop.html'){
 
     //Objetos
     for (var i = 0; objects.length > i; i++) {
-            console.log(objects[i]);
+            // console.log(objects[i]);
         }
 
 } else {};

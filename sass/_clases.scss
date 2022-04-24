@@ -126,15 +126,43 @@
     &__img-cont{
         width: 200px;
         height: 250px;
-        box-shadow: 0 0 0 5px #fff,
-                    6px 6px 10px; 
+        border: 5px solid #fff;
+        // box-shadow: 0 0 0 5px #fff,
+        //             6px 6px 10px; 
+        box-shadow: 6px 6px 10px; 
         margin-bottom: 15px;
+        position: relative;
+
+        &__add-btn{
+            display: none;
+            width: auto;
+            height: auto;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            color: #000;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            cursor: pointer;
+
+            &:active{
+                background-color: rgb(0, 156, 0);
+            }
+
+        }
 
         &__img{
             display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
+
+            &:hover{
+                transform: scale(1.05);
+                transition: all .5s;
+                cursor: pointer;
+            }
         }
     }
     &__description-cont{
@@ -171,7 +199,7 @@
 }
 @mixin about-description{
     text-align: justify;
-    line-height: 1.3rem;
+    line-height: 1.5rem;
     letter-spacing: .025rem;
     margin: 15px 50px 42px 50px;
 

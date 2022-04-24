@@ -66,6 +66,18 @@
         }
         &__description-2{
             @include about-description();
+
+            &__a{
+                margin-bottom: 100px;
+                color: #000;
+
+                &:hover{
+                    color: #0645AD;
+                }
+                &:visited{
+                    color: #800080;
+                }
+            }
         }
         &__description-3{
             @include about-description();

@@ -314,14 +314,37 @@
 .shop__main__grid-1__shop-cont__card__img-cont {
   width: 200px;
   height: 250px;
-  box-shadow: 0 0 0 5px #fff, 6px 6px 10px;
+  border: 5px solid #fff;
+  box-shadow: 6px 6px 10px;
   margin-bottom: 15px;
+  position: relative;
+}
+.shop__main__grid-1__shop-cont__card__img-cont__add-btn {
+  display: none;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  color: #000;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+.shop__main__grid-1__shop-cont__card__img-cont__add-btn:active {
+  background-color: rgb(0, 156, 0);
 }
 .shop__main__grid-1__shop-cont__card__img-cont__img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.shop__main__grid-1__shop-cont__card__img-cont__img:hover {
+  transform: scale(1.05);
+  transition: all 0.5s;
+  cursor: pointer;
 }
 .shop__main__grid-1__shop-cont__card__description-cont {
   padding: 0px 6px;
@@ -597,7 +620,7 @@
 }
 .about__main__description-0 {
   text-align: justify;
-  line-height: 1.3rem;
+  line-height: 1.5rem;
   letter-spacing: 0.025rem;
   margin: 15px 50px 42px 50px;
   margin: 15px 25px 42px 25px;
@@ -609,7 +632,7 @@
 }
 .about__main__description-1 {
   text-align: justify;
-  line-height: 1.3rem;
+  line-height: 1.5rem;
   letter-spacing: 0.025rem;
   margin: 15px 50px 42px 50px;
 }
@@ -620,7 +643,7 @@
 }
 .about__main__description-2 {
   text-align: justify;
-  line-height: 1.3rem;
+  line-height: 1.5rem;
   letter-spacing: 0.025rem;
   margin: 15px 50px 42px 50px;
 }
@@ -629,9 +652,19 @@
     margin: 15px 150px 42px 150px;
   }
 }
+.about__main__description-2__a {
+  margin-bottom: 100px;
+  color: #000;
+}
+.about__main__description-2__a:hover {
+  color: #0645AD;
+}
+.about__main__description-2__a:visited {
+  color: #800080;
+}
 .about__main__description-3 {
   text-align: justify;
-  line-height: 1.3rem;
+  line-height: 1.5rem;
   letter-spacing: 0.025rem;
   margin: 15px 50px 42px 50px;
 }
@@ -642,7 +675,7 @@
 }
 .about__main__description-4 {
   text-align: justify;
-  line-height: 1.3rem;
+  line-height: 1.5rem;
   letter-spacing: 0.025rem;
   margin: 15px 50px 42px 50px;
 }
