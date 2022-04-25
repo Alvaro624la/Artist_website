@@ -97,29 +97,47 @@ if(window.location.pathname == '/html/home.html'){
 if(window.location.pathname == '/html/shop.html'){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
+    //VER IMAGEN EN GRANDE
+    //VARIABLES
+    const MAIN = document.getElementById('main');
+    let cardImg = document.getElementsByClassName('shop__main__grid-1__shop-cont__card__img-cont__img');
+    //FUNCIONES
+    function biggerImgs(){
+        for(let i = 0; i <= cardImg.length -1; i++){
+            // console.log(cardImg[i]);
+            cardImg[i].addEventListener('click', ()=>{
+                // console.log('click');
+                let bigImgCont = document.createElement('div');
+                MAIN.appendChild(bigImgCont);
+                bigImgCont.className = 'biggerImgCont';
+                let bigImgInside = document.createElement('img');
+                bigImgCont.appendChild(bigImgInside);
+                bigImgInside.className = 'biggerImgCont__img-inside';
+                // console.log(cardImg[i].src);
+                bigImgInside.src = (cardImg[i].src)
+            });
+        };
+    };
+    biggerImgs();
+
     //ADD TO CART - BTN:
     //VARIABLES
     const ADDBTN = document.getElementById('add-btn');
-    let cardImg = document.getElementById('card-img');
-
+    let cardImgCont = document.getElementById('card-img-cont');
     //FUNCIONES
-    let addToCart = function(){
-        cardImg.addEventListener('mouseover', ()=>{
-            ADDBTN.style.display = 'block';
-        });
-        cardImg.addEventListener('mouseout', ()=>{
-            ADDBTN.style.display = 'none';
-        });
-    };
-    addToCart();
-
-    // for(let i = 0; i <= cardImg.length -1; i++){
-    //     cardImg[i].addEventListener('mouseover', ()=>{
-    //         ADDBTN.style.display = 'block';
-    //     })
-    // };
-    
-
+    // let addToCart = function(){
+    //     for(let i = 0; i <= cardImgCont.length -1; i++){
+    //         console.log(cardImgCont[i]);
+    //         cardImgCont[i].addEventListener('click', ()=>{
+    //             cardImgCont.addEventListener('mouseover', ()=>{
+    //                 ADDBTN.style.display = 'block';
+    //             });
+    //             cardImgCont.addEventListener('mouseout', ()=>{
+    //                 ADDBTN.style.display = 'none';
+    //             });
+    //         });
+    //     };
+    // addToCart();
 
 
     //CART:

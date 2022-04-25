@@ -122,6 +122,7 @@
 //SHOP
 @mixin card{
     padding: 15px;
+    list-style-type: none;
 
     &__img-cont{
         width: 200px;
