@@ -94,6 +94,7 @@
                 grid-template-columns: auto auto auto auto;
                 grid-template-rows: auto;
                 justify-content: space-around;
+                position: relative;
 
                 &__card{
                     @include card();
@@ -105,7 +106,7 @@
 //FOR JavaScript
 //AMPLIAR IMAGENES
 .biggerImgCont{
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -113,7 +114,6 @@
     background-color: rgba(0, 0, 0, 0.9);
 
     &__img-inside{
-        // display: block;
         position: absolute;
         width: 50%;
         height: 100%;

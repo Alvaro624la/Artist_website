@@ -91,7 +91,7 @@ if(window.location.pathname == '/html/home.html'){
         next();
     }, 4000);
 
-} else {};
+};
 
 //SHOP (/html/shop.html)
 if(window.location.pathname == '/html/shop.html'){
@@ -105,42 +105,65 @@ if(window.location.pathname == '/html/shop.html'){
     function biggerImgs(){
         for(let i = 0; i <= cardImg.length -1; i++){
             // console.log(cardImg[i]);
-            cardImg[i].addEventListener('click', ()=>{
-                // console.log('click');
+            cardImg[i].addEventListener('click', (event)=>{
+                // console.log(event.target.id);
+                // console.log(event.target);
                 let bigImgCont = document.createElement('div');
                 MAIN.appendChild(bigImgCont);
                 bigImgCont.className = 'biggerImgCont';
                 let bigImgInside = document.createElement('img');
                 bigImgCont.appendChild(bigImgInside);
                 bigImgInside.className = 'biggerImgCont__img-inside';
-                // console.log(cardImg[i].src);
-                bigImgInside.src = (cardImg[i].src)
+                bigImgInside.src = (cardImg[i].src);
+
+                document.addEventListener('click', function removeChild(e){
+                    if(e.target.id != 'card-img'){
+                        bigImgCont.parentNode.removeChild(bigImgCont);
+                        document.removeEventListener('click', removeChild);
+                    };
+                });
             });
+            
         };
     };
-    biggerImgs();
+    // biggerImgs();
+
 
     //ADD TO CART - BTN:
     //VARIABLES
-    const ADDBTN = document.getElementById('add-btn');
-    let cardImgCont = document.getElementById('card-img-cont');
+    let cardImgCont = document.getElementsByClassName('shop__main__grid-1__shop-cont__card__img-cont');
+    let shopContent = document.getElementById('shop-cont');
+    let card = document.getElementsByClassName('shop__main__grid-1__shop-cont__card');
     //FUNCIONES
-    // let addToCart = function(){
-    //     for(let i = 0; i <= cardImgCont.length -1; i++){
-    //         console.log(cardImgCont[i]);
-    //         cardImgCont[i].addEventListener('click', ()=>{
-    //             cardImgCont.addEventListener('mouseover', ()=>{
-    //                 ADDBTN.style.display = 'block';
-    //             });
-    //             cardImgCont.addEventListener('mouseout', ()=>{
-    //                 ADDBTN.style.display = 'none';
-    //             });
-    //         });
-    //     };
-    // addToCart();
+    function addToCart(){
+        for(let i = 0; i <= cardImgCont.length -1; i++){
+            // console.log(cardImgCont[i]);
+            cardImgCont[i].addEventListener('mouseover', ()=>{
+                let addBtn = document.createElement('a');
+                cardImgCont[i].appendChild(addBtn);
+                addBtn.className = 'shop__main__grid-1__shop-cont__card__img-cont__add-btn';
+                addBtn.innerHTML = 'Add to cart';
+                
+                addBtn.addEventListener('mouseover', ()=>{
+                    addBtn.addEventListener('click', ()=>{
+                        console.log('+1');
+                    });
+                });
+
+                cardImgCont[i].addEventListener('mouseout', function addCartOut(){
+                    // console.log(card[i]);
+                    addBtn.parentNode.removeChild(addBtn);
+                    document.removeEventListener('mouseout', addCartOut);                    
+                });
+            });
+            
+        };
+    };
+    addToCart();
 
 
     //CART:
+    // element.href = './cart.html';
     //VARIABLES
     //seccion(shop-container)
     const CONTAINER = document.getElementById('shop-cont');
@@ -157,7 +180,7 @@ if(window.location.pathname == '/html/shop.html'){
             // console.log(objects[i]);
         }
 
-} else {};
+};
 
 //ABOUT (/html/about.html)
 if(window.location.pathname == '/html/about.html'){
@@ -165,7 +188,7 @@ if(window.location.pathname == '/html/about.html'){
 
 
 
-} else {};
+};
 
 //CONTACT (/html/contact.html)
 if(window.location.pathname == '/html/contact.html'){
@@ -173,4 +196,4 @@ if(window.location.pathname == '/html/contact.html'){
 
 
 
-} else {};
+};
