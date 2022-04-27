@@ -126,34 +126,26 @@ if(window.location.pathname == '/html/shop.html'){
             
         };
     };
-    // biggerImgs();
+    biggerImgs();
 
 
     //ADD TO CART - BTN:
     //VARIABLES
     let cardImgCont = document.getElementsByClassName('shop__main__grid-1__shop-cont__card__img-cont');
-    let shopContent = document.getElementById('shop-cont');
-    let card = document.getElementsByClassName('shop__main__grid-1__shop-cont__card');
     //FUNCIONES
     function addToCart(){
         for(let i = 0; i <= cardImgCont.length -1; i++){
             // console.log(cardImgCont[i]);
-            cardImgCont[i].addEventListener('mouseover', ()=>{
+            cardImgCont[i].addEventListener('mouseenter', ()=>{
                 let addBtn = document.createElement('a');
                 cardImgCont[i].appendChild(addBtn);
                 addBtn.className = 'shop__main__grid-1__shop-cont__card__img-cont__add-btn';
                 addBtn.innerHTML = 'Add to cart';
-                
-                addBtn.addEventListener('mouseover', ()=>{
-                    addBtn.addEventListener('click', ()=>{
-                        console.log('+1');
-                    });
-                });
 
-                cardImgCont[i].addEventListener('mouseout', function addCartOut(){
+                cardImgCont[i].addEventListener('mouseleave', function addCartOut(){
                     // console.log(card[i]);
                     addBtn.parentNode.removeChild(addBtn);
-                    document.removeEventListener('mouseout', addCartOut);                    
+                    document.removeEventListener('mouseleave', addCartOut);                    
                 });
             });
             
