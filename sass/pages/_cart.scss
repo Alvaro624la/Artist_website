@@ -1,0 +1,80 @@
+@import "../clases", "../variables";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// CART
+.cart{ //body (of cart page)
+    font-family: 'Montserrat', sans-serif, Helvetica, sans-serif, Arial;
+    // background:{
+    //     image: url('../src/img/example.jpg');
+    // }
+    // background: radial-gradient(ellipse at top, #cf7676, transparent),
+    //         radial-gradient(ellipse at bottom, #424ebd, transparent);
+    // height: 100vh;
+
+    &__nav{
+        @include navbar();
+    }
+    &__hamburguer-nav{
+        display: none;
+        cursor: pointer;
+        
+        &__bar{
+            @include hamburguer-btn();
+        }
+    }
+    &__main{ //body (cart container)
+        position: relative;
+        margin-top: 70px;
+    }
+}
+
+//MEDIA QUERIES
+// Extra-big large devices (large desktops, 1500px and up)
+@media (min-width: 1500px) {
+    
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1500px) {
+   
+}
+
+// Large devices (desktops, 866px and up)
+@media (max-width: 1200px) {
+    
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 866px) {
+   
+}
+
+// Landscape phones (576px and up)
+@media (max-width: 768px) {}
+
+// Portrait phones (340px and up)
+@media (max-width: 658px) {
+    
+}
+
+@media (max-width: 576px) {
+    .cart{
+        @include responsivenavs();
+    }
+}
+
+// //Personalizado
+// @media (max-width: 485px) {
+//     .cart{
+//         @include responsivenavs();
+//     }
+// }
+
+//  Smart phones (0px and up)
+@media (max-width: 440px) {
+    
+}

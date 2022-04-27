@@ -155,13 +155,10 @@ if(window.location.pathname == '/html/shop.html'){
 
 
     //CART:
-    // element.href = './cart.html';
     //VARIABLES
-    //seccion(shop-container)
-    const CONTAINER = document.getElementById('shop-cont');
-    //all cards
-    let allCards = document.getElementsByClassName('shop__main__grid-1__shop-cont__card');
-
+    const GOCARTBTN = document.getElementById('go-cart-btn');
+    let allcard = document.getElementsByClassName('shop__main__grid-1__shop-cont__card');
+    let cartContainer = document.getElementById('contact__main');
     // //mostrar todos los allCards id
     // for (var i = 0; allCards.length > i; i++) {
     //     console.log(allCards[i] = allCards[i].id);
