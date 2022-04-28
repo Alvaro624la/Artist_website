@@ -72,8 +72,26 @@
                 </ul>
             </section>
             <ul class='shop__main__grid-1__shop-cont' id="shop-cont">
-                <!-- <a class="shop__main__grid-1__shop-cont__go-cart-btn" id="go-cart-btn" href="./cart.html">Cart</a>
-                <li class='shop__main__grid-1__shop-cont__card' id="000001">
+                <a class="shop__main__grid-1__shop-cont__go-cart-btn" id="go-cart-btn" href="#modalCart">Cart</a>
+                <div id="modalCart" class="shop__main__grid-1__shop-cont__modal-cart">
+                    <!-- <a href="#" class="modal-cart__close"></a> --><!--for ONLY-CSS modal-->
+                    <div class="shop__main__grid-1__shop-cont__modal-cart__content">
+
+                        <div class="shop__main__grid-1__shop-cont__modal-cart__content__flex">
+                            <p class="shop__main__grid-1__shop-cont__modal-cart__content__flex__p">Cart</p>
+                            <button class="shop__main__grid-1__shop-cont__modal-cart__content__flex__button-close" id="cartClose" href="#">❌</button>
+                        </div>
+                        
+                        <div id="cartContainer" class="shop__main__grid-1__shop-cont__modal-cart__content__cartContainer">
+                            <!--JS CART-PRODUCTS CONTENT-->
+                        </div>
+
+                        <p class="shop__main__grid-1__shop-cont__modal-cart__content__priceProduct">Total amount: $<span id="totalPrice">0</span></p>
+                        <button id="cleanCart" class="shop__main__grid-1__shop-cont__modal-cart__content__button-clear">Clear cart</button>
+
+                    </div>
+                </div>
+                <!-- <li class='shop__main__grid-1__shop-cont__card' id="000001">
                     <div class='shop__main__grid-1__shop-cont__card__img-cont' id="card-img-cont">
                         <img class='shop__main__grid-1__shop-cont__card__img-cont__img'  src="../src/img/shop/monalisa.jpeg" alt="" id="card-img">
                     </div>

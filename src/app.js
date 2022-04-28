@@ -133,49 +133,47 @@ if(window.location.pathname == '/html/shop.html'){
     //VARIABLES
     const GOCARTBTN = document.getElementById('go-cart-btn');
     let allCard = document.getElementsByClassName('shop__main__grid-1__shop-cont__card');
-    let cartContainer = document.getElementById('cart__main');
+    // let cartContainer = document.getElementById('cart__main');
 
     //FUNCTIONS
 
     //asignar propiedades de x objeto.id a x cards.id de html. Así cada card tendrá categorias, id y demás propiedades
     //si coincide categoria de indice + categoria del card = mostrar éstos coincidentes
 
-    
-    //ADD TO CART - BTN:
-    //VARIABLES
-    let cardImgCont = document.getElementsByClassName('shop__main__grid-1__shop-cont__card__img-cont');
-    //FUNCIONES
-    // function addToCart(){
-    //     for(let i = 0; i <= cardImgCont.length -1; i++){
-    //         cardImgCont[i].addEventListener('mouseenter', (e)=>{
-    //             let addBtn = document.createElement('a');
-    //             cardImgCont[i].appendChild(addBtn);
-    //             addBtn.className = 'shop__main__grid-1__shop-cont__card__img-cont__add-btn';
-    //             addBtn.innerHTML = 'Add to cart';
-
-    //             //CART ITEMS ARRAY //
-    //             let cartItems = [];
-    //             addBtn.addEventListener('click', (e)=>{
-    //                 let targetId = e.target.parentElement.parentElement.id; //find --> card id
-
-    //                 cartItems.push(targetId);
-    //                 console.log(cartItems);
-    //             });
-
-    //             cardImgCont[i].addEventListener('mouseleave', function addCartOut(){
-    //                 addBtn.parentNode.removeChild(addBtn);
-    //                 document.removeEventListener('mouseleave', addCartOut);                    
-    //             });
-    //         });
-            
-    //     };
-    // };
-    // addToCart();
 
     // CARRITO ONLY JAVASCRIPT (video: https://www.youtube.com/watch?v=Mm3iLqhZB1A&ab_channel=GCode)(6:51 min)
-    const contenedorProductos = document.getElementById('shop-cont');
+    const productContainer = document.getElementById('shop-cont');
+    
+    const cartContainer = document.getElementById('cartContainer');
+   
+    const closeCartBtn = document.getElementById('cartClose');
+    const clearCartBtn = document.getElementById('cleanCart');
+
+    const cardProductContador = document.getElementById('go-cart-btn');
+
+    const totalPrice = document.getElementById('totalPrice');
 
     let cart = [];
+
+    //local storage
+    document.addEventListener('DOMContentLoaded', () => {
+        if(localStorage.getItem('cart')){
+            cart = JSON.parse(localStorage.getItem('cart'))
+            actualizarCarrito();
+        }
+    });
+
+    //close cart btn
+    closeCartBtn.addEventListener('click', () => {
+        window.location = "http://127.0.0.1:5500/html/shop.html#";
+    });
+
+    //clear cart btn
+    clearCartBtn.addEventListener('click', ()=>{
+        cart.length = 0;
+        cart.cantidad = 0;
+        actualizarCarrito();
+    });
 
     stockProductos.forEach((producto) => {
         const li = document.createElement('li');
@@ -199,15 +197,15 @@ if(window.location.pathname == '/html/shop.html'){
         pPrice.innerHTML = `<p>${producto.price}</p>`
         li.innerHTML = `<button id="add${producto.id}" class="shop__main__grid-1__shop-cont__card__img-cont__add-btn">Add to cart</button>`;
         
-        contenedorProductos.appendChild(li);
+        productContainer.appendChild(li);
         li.appendChild(divImg);
         li.appendChild(divDesc);
         divDesc.appendChild(pName);
         divDesc.appendChild(pSize);
         divDesc.appendChild(pPrice);
 
-        const btn = document.getElementById('add${producto.id}');
-
+        const btn = document.getElementById(`add${producto.id}`);
+        
         btn.addEventListener('click', ()=>{
             addToCart(producto.id);
         });
@@ -215,13 +213,64 @@ if(window.location.pathname == '/html/shop.html'){
     });
 
     const addToCart = (productId) => {
+        const exists = cart.some(product => product.id === productId)
+
+        if(exists){
+            const product = cart.map(product=>{
+                if(product.id === productId){
+                    product.cantidad++;
+                }
+            })
+        } else {
+
         const item = stockProductos.find((product) => product.id === productId);
         cart.push(item);
-        console.log(cart);
+        // console.log(cart);
+        }
+    actualizarCarrito();
     }
+    ////////////////////////////////////////////////////////////////////////////////
+    const deleteProductCart = (productId) => {
+        const item = cart.find((product) => product.id === productId);
+        const indice = cart.indexOf(item);
+        cart.splice(indice, 1)
+        actualizarCarrito();
+    };
 
+    //CART
+   
+    const actualizarCarrito = () => {
+        cartContainer.innerHTML = "";
+
+        cart.forEach((product) => {
+            const div = document.createElement('div');
+            div.className = ('shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products');
+            div.innerHTML = `
+            <p>${product.cantidad}</p>
+            <p>${product.name}</p>
+            <p>${product.price}</p>
+            <p>${product.size}</p>
+            <button onclick="deleteProductCart(${product.id})" class="shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__delete-product">🗑️</button>
+            `;
+            cartContainer.appendChild(div);
+
+            localStorage.setItem('cart', JSON.stringify(cart))
+        });
+        cardProductContador.innerText = `Buy ${cart.length} products`;
+        ////////////////////////////////////////////////////////////////////////////////
+        totalPrice.innerText = cart.reduce((acc, product) => acc + product.price, 0)
+    };
 
 }; //END (SHOP PAGE)
+
+//ABOUT (/html/cart.html)
+if(window.location.pathname == '/html/cart.html'){
+    console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
+
+
+
+
+}; //END (CART PAGE)
 
 //ABOUT (/html/about.html)
 if(window.location.pathname == '/html/about.html'){

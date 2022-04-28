@@ -46,8 +46,19 @@
         <span class="cart__hamburguer-nav__bar"></span>
         <span class="cart__hamburguer-nav__bar"></span>
     </div>
-    <main class="cart__main" id="cart__main">
-        <!--CART CONTENT-->
+    <main class="cart__main">
+        <!--CART PAGE CONTENT-->
+        <div class="cart-container">
+            <div class="cart-container__cart">
+                <p>Cart</p>
+                <button id="cartClose">X</button>
+                <div id="cartContainer">
+                    <!--JS CART-PRODUCTS CONTENT-->
+                </div>
+                <p class="priceProduct">Total amount: $<span id="priceTotal">0</span></p>
+                <button id="cleanCart" class="cart-container__cart__add">'Remove' cart</button>
+            </div>
+        </div>
     </main>
 
     <script src="../bundle.js"></script>
