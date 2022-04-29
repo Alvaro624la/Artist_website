@@ -137,8 +137,6 @@ if(window.location.pathname == '/html/shop.html'){
 
     //FUNCTIONS
 
-    //asignar propiedades de x objeto.id a x cards.id de html. Así cada card tendrá categorias, id y demás propiedades
-    //si coincide categoria de indice + categoria del card = mostrar éstos coincidentes
 
 
     // CARRITO ONLY JAVASCRIPT (video: https://www.youtube.com/watch?v=Mm3iLqhZB1A&ab_channel=GCode)(6:51 min)
@@ -191,7 +189,7 @@ if(window.location.pathname == '/html/shop.html'){
                 pSize.classList.add('shop__main__grid-1__shop-cont__card__description-cont__size');
                 pPrice.classList.add('shop__main__grid-1__shop-cont__card__description-cont__price');
 
-        divImg.innerHTML = `<img class='shop__main__grid-1__shop-cont__card__img-cont__img' src=${producto.img} alt="...">`;
+        divImg.innerHTML = `<img class='shop__main__grid-1__shop-cont__card__img-cont__img' src=${producto.img} alt="${producto.name} image">`;
         pName.innerHTML = `<p>${producto.name}</p>`
         pSize.innerHTML = `<p>${producto.size}</p>`
         pPrice.innerHTML = `<p>${producto.price}</p>`
@@ -227,18 +225,17 @@ if(window.location.pathname == '/html/shop.html'){
         cart.push(item);
         // console.log(cart);
         }
-    actualizarCarrito();
+        actualizarCarrito();
     }
-    ////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////FALTA HACER/////////////////////////////////////////////
     const deleteProductCart = (productId) => {
         const item = cart.find((product) => product.id === productId);
         const indice = cart.indexOf(item);
         cart.splice(indice, 1)
         actualizarCarrito();
     };
-
+    ///////////////////////////////////FALTA HACER/////////////////////////////////////////////
     //CART
-   
     const actualizarCarrito = () => {
         cartContainer.innerHTML = "";
 
@@ -258,8 +255,17 @@ if(window.location.pathname == '/html/shop.html'){
         });
         cardProductContador.innerText = `Buy ${cart.length} products`;
         ////////////////////////////////////////////////////////////////////////////////
-        totalPrice.innerText = cart.reduce((acc, product) => acc + product.price, 0)
+        totalPrice.innerText = cart.reduce((acc, product) => acc + product.price, 0);
     };
+
+    //FALTA HACER:
+    //Hacer grandes imagenes
+    //arreglar total amount del carrito
+    //arreglar botones eliminar productos individules carrito
+    //hacer JS indice filtros shop
+        //Ideas indice filtros:
+        //asignar propiedades de x objeto.id a x cards.id de html. Así cada card tendrá categorias, id y demás propiedades
+        //si coincide categoria de indice + categoria del card = mostrar éstos coincidentes
 
 }; //END (SHOP PAGE)
 

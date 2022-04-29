@@ -337,6 +337,7 @@
   top: -100%;
   position: absolute;
   z-index: 1;
+  max-height: 30vh;
 }
 .shop__main__grid-1__shop-cont__modal-cart:target {
   position: fixed;
@@ -346,7 +347,7 @@
   width: auto;
   height: 100%;
   visibility: visible;
-  transition: left 1s;
+  transition: top 0.8s;
 }
 .shop__main__grid-1__shop-cont__modal-cart__content {
   padding: 20px;
@@ -359,7 +360,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .shop__main__grid-1__shop-cont__modal-cart__content__flex__p {
   font-size: 1.3em;
@@ -379,7 +380,7 @@
   background-color: #d83737;
 }
 .shop__main__grid-1__shop-cont__modal-cart__content__priceProduct {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-size: 1.1em;
   font-weight: 500;
 }
@@ -396,6 +397,12 @@
 .shop__main__grid-1__shop-cont__modal-cart__content__button-clear:active {
   background-color: #d83737;
 }
+.shop__main__grid-1__shop-cont__modal-cart__content__cartContainer {
+  margin-bottom: 20px;
+  max-height: 30vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
 .shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products {
   display: grid;
   grid-template-columns: 0.4fr 1fr 1fr 1fr 0.4fr;
@@ -407,6 +414,7 @@
   width: 100%;
   height: 100%;
   border: transparent 0 solid;
+  cursor: pointer;
 }
 .shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__delete-product:hover {
   background-color: rgba(216, 55, 55, 0.8);
@@ -416,6 +424,14 @@
 }
 .shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products > * {
   margin-bottom: 3px;
+}
+.shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products > p::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  display: block;
+  transition: width 0.3s;
 }
 .shop__main__grid-1__shop-cont__card {
   padding: 15px;
@@ -435,16 +451,14 @@
   height: auto;
   padding: 10px;
   background-color: #fff;
-  border-radius: 10px;
-  color: #000;
+  border-radius: 13px 0px;
   border: 1px solid black;
-  bottom: 10px;
-  left: 10px;
+  color: #000;
   cursor: pointer;
   text-decoration: none;
 }
 .shop__main__grid-1__shop-cont__card__img-cont__add-btn:active {
-  background-color: #009c00;
+  background-color: rgba(0, 156, 0, 0.6);
 }
 .shop__main__grid-1__shop-cont__card__img-cont__img {
   display: block;
