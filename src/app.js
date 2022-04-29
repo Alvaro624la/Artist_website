@@ -97,38 +97,6 @@ if(window.location.pathname == '/html/home.html'){
 if(window.location.pathname == '/html/shop.html'){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
-    //VER IMAGEN EN GRANDE
-    //VARIABLES
-    const MAIN = document.getElementById('main');
-    let cardImg = document.getElementsByClassName('shop__main__grid-1__shop-cont__card__img-cont__img');
-    //FUNCIONES
-    function biggerImgs(){
-        for(let i = 0; i <= cardImg.length -1; i++){
-            // console.log(cardImg[i]);
-            cardImg[i].addEventListener('click', (event)=>{
-                // console.log(event.target.id);
-                // console.log(event.target);
-                let bigImgCont = document.createElement('div');
-                MAIN.appendChild(bigImgCont);
-                bigImgCont.className = 'biggerImgCont';
-                let bigImgInside = document.createElement('img');
-                bigImgCont.appendChild(bigImgInside);
-                bigImgInside.className = 'biggerImgCont__img-inside';
-                bigImgInside.src = (cardImg[i].src);
-
-                document.addEventListener('click', function removeChild(e){
-                    if(e.target.id != 'card-img'){
-                        bigImgCont.parentNode.removeChild(bigImgCont);
-                        document.removeEventListener('click', removeChild);
-                    };
-                });
-            });
-            
-        };
-    };
-    // biggerImgs();
-
-
     //FILTERS(LEFT SHOP MENÚ):
     //VARIABLES
     const GOCARTBTN = document.getElementById('go-cart-btn');
@@ -139,7 +107,7 @@ if(window.location.pathname == '/html/shop.html'){
 
 
 
-    // CARRITO ONLY JAVASCRIPT (video: https://www.youtube.com/watch?v=Mm3iLqhZB1A&ab_channel=GCode)(6:51 min)
+    // CARRITO ONLY JAVASCRIPT (video: https://www.youtube.com/watch?v=Mm3iLqhZB1A&ab_channel=GCode)
     const productContainer = document.getElementById('shop-cont');
     
     const cartContainer = document.getElementById('cartContainer');
@@ -189,7 +157,7 @@ if(window.location.pathname == '/html/shop.html'){
                 pSize.classList.add('shop__main__grid-1__shop-cont__card__description-cont__size');
                 pPrice.classList.add('shop__main__grid-1__shop-cont__card__description-cont__price');
 
-        divImg.innerHTML = `<img class='shop__main__grid-1__shop-cont__card__img-cont__img' src=${producto.img} alt="${producto.name} image">`;
+        divImg.innerHTML = `<img id="${producto.id}" class='shop__main__grid-1__shop-cont__card__img-cont__img' src=${producto.img} alt="${producto.name} image">`;
         pName.innerHTML = `<p>${producto.name}</p>`
         pSize.innerHTML = `<p>${producto.size}</p>`
         pPrice.innerHTML = `<p>${producto.price}</p>`
@@ -245,7 +213,7 @@ if(window.location.pathname == '/html/shop.html'){
             div.innerHTML = `
             <p>${product.cantidad}</p>
             <p>${product.name}</p>
-            <p>${product.price}</p>
+            <p>${product.price}€</p>
             <p>${product.size}</p>
             <button onclick="deleteProductCart(${product.id})" class="shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__delete-product">🗑️</button>
             `;
@@ -258,8 +226,42 @@ if(window.location.pathname == '/html/shop.html'){
         totalPrice.innerText = cart.reduce((acc, product) => acc + product.price, 0);
     };
 
+    //VER IMAGEN EN GRANDE
+    //VARIABLES
+    const MAIN = document.getElementById('main');
+    let prod = document.getElementsByClassName('shop__main__grid-1__shop-cont__card__img-cont__img');
+    //FUNCIONES
+    function biggerImgs(){
+        for(let i = 0; i <= prod.length -1; i++){
+            // console.log(prod[i]);
+            prod[i].addEventListener('click', (event)=>{
+                // console.log(event.target);
+                console.log(stockProductos[i].originalImg);
+                let bigImgCont = document.createElement('div');
+                let bigImgInside = document.createElement('img');
+
+                MAIN.appendChild(bigImgCont);
+                bigImgCont.appendChild(bigImgInside);
+                
+                bigImgCont.className = 'biggerImgCont';
+                bigImgInside.className = 'biggerImgCont__img-inside';
+                bigImgInside.src = (stockProductos[i].originalImg);
+
+                document.addEventListener('click', function removeChild(e){
+                    // console.log(e.target.classList);
+                    if(e.target.classList != 'shop__main__grid-1__shop-cont__card__img-cont__img'){
+                        bigImgCont.parentNode.removeChild(bigImgCont);
+                        document.removeEventListener('click', removeChild);
+                        console.log('Click fuera');
+                    };
+                });
+            });
+            
+        };
+    };
+    biggerImgs();
+
     //FALTA HACER:
-    //Hacer grandes imagenes
     //arreglar total amount del carrito
     //arreglar botones eliminar productos individules carrito
     //hacer JS indice filtros shop
