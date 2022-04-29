@@ -160,7 +160,7 @@ if(window.location.pathname == '/html/shop.html'){
         divImg.innerHTML = `<img id="${producto.id}" class='shop__main__grid-1__shop-cont__card__img-cont__img' src=${producto.img} alt="${producto.name} image">`;
         pName.innerHTML = `<p>${producto.name}</p>`
         pSize.innerHTML = `<p>${producto.size}</p>`
-        pPrice.innerHTML = `<p>${producto.price}</p>`
+        pPrice.innerHTML = `<p>${producto.price}€</p>`
         li.innerHTML = `<button id="add${producto.id}" class="shop__main__grid-1__shop-cont__card__img-cont__add-btn">Add to cart</button>`;
         
         productContainer.appendChild(li);
@@ -208,22 +208,38 @@ if(window.location.pathname == '/html/shop.html'){
         cartContainer.innerHTML = "";
 
         cart.forEach((product) => {
+            // console.log(product);
             const div = document.createElement('div');
             div.className = ('shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products');
             div.innerHTML = `
-            <p>${product.cantidad}</p>
+            <p><img class="shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__cart-imgs" src="${product.img}" style="width:20px;"> ${product.cantidad}</p>
             <p>${product.name}</p>
             <p>${product.price}€</p>
-            <p>${product.size}</p>
+            <!--<p>${product.size}</p>-->
             <button onclick="deleteProductCart(${product.id})" class="shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__delete-product">🗑️</button>
             `;
             cartContainer.appendChild(div);
 
-            localStorage.setItem('cart', JSON.stringify(cart))
+            localStorage.setItem('cart', JSON.stringify(cart));
         });
         cardProductContador.innerText = `Buy ${cart.length} products`;
         ////////////////////////////////////////////////////////////////////////////////
+        console.log(
+            cart.reduce((acc, product) => acc + product.price, 0)
+        );
+        console.log(
+            cart.map(item => item.price)
+        );
         totalPrice.innerText = cart.reduce((acc, product) => acc + product.price, 0);
+        
+        // let totalAmountFinal = cart.map(item => item.price).reduce((acc, product) => acc + product, 0);
+
+        // let sumaTotal = 0;
+        // let onlyNumArr = totalPrice.innerText = cart.map(item => item.price); //[70, 50, 49...]
+        // onlyNumArr.forEach((num)=>{
+        //     sumaTotal += num;
+        // });
+        // totalPrice.textContent = sumaTotal;
     };
 
     //VER IMAGEN EN GRANDE
@@ -236,7 +252,7 @@ if(window.location.pathname == '/html/shop.html'){
             // console.log(prod[i]);
             prod[i].addEventListener('click', (event)=>{
                 // console.log(event.target);
-                console.log(stockProductos[i].originalImg);
+                // console.log(stockProductos[i].originalImg);
                 let bigImgCont = document.createElement('div');
                 let bigImgInside = document.createElement('img');
 
@@ -252,7 +268,7 @@ if(window.location.pathname == '/html/shop.html'){
                     if(e.target.classList != 'shop__main__grid-1__shop-cont__card__img-cont__img'){
                         bigImgCont.parentNode.removeChild(bigImgCont);
                         document.removeEventListener('click', removeChild);
-                        console.log('Click fuera');
+                        // console.log('Click fuera');
                     };
                 });
             });
