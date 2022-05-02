@@ -1,9 +1,4 @@
 import {stockProductos} from "./modulos/stockproductos.js";
-/*
-import * as "variables" from "./modulos/variables";
-import * as "funciones" from "./modulos/funciones";
-import * as "bootstrap" from "./modulos/bootstrap";
-*/
 
 // ALL HTML PAGES
 //HAMBURGUER NAVBAR BTN
@@ -97,16 +92,6 @@ if(window.location.pathname == '/html/home.html'){
 if(window.location.pathname == '/html/shop.html'){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
-    //FILTERS(LEFT SHOP MENÚ):
-    //VARIABLES
-    const GOCARTBTN = document.getElementById('go-cart-btn');
-    let allCard = document.getElementsByClassName('shop__main__grid-1__shop-cont__card');
-    // let cartContainer = document.getElementById('cart__main');
-
-    //FUNCTIONS
-
-
-
     // CARRITO ONLY JAVASCRIPT (video: https://www.youtube.com/watch?v=Mm3iLqhZB1A&ab_channel=GCode)
     const productContainer = document.getElementById('shop-cont');
     
@@ -139,6 +124,44 @@ if(window.location.pathname == '/html/shop.html'){
         cart.length = 0;
         cart.cantidad = 0;
         actualizarCarrito();
+    });
+
+    //FILTRAR PRODUCTOS
+    // console.log(stockProductos);
+    //VARIABLES
+    let filtros = document.getElementsByClassName('shop__main__grid-1__nav-cont__ul__index-one__index-two');
+
+    const seeAll = document.getElementById('seeAll');
+    const nature = document.getElementById('nature');
+        // const animals = document.getElementById('animals');
+        // const landscapes = document.getElementById('landscapes');
+    const sculptures = document.getElementById('sculptures');
+    const models = document.getElementById('models');
+    const oil = document.getElementById('oil');
+
+    const frame = document.getElementById('frame');
+    const noFrame = document.getElementById('noFrame');
+    //FUNCTIONS
+    let filtrosArr = Array.from(filtros);
+
+    filtrosArr.forEach((filtro)=>{
+        filtro.addEventListener('click', (e)=>{
+            let prodFiltrados = [];
+            prodFiltrados = stockProductos.filter((producto)=>{
+                    if(producto.category == e.target.id){
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
+            console.log(prodFiltrados);
+
+            // if(e.target.id == 'seeAll'){
+            //     e.preventDefault();
+            //     prodFiltrados = stockProductos;
+            // } else{};
+
+        });
     });
 
     stockProductos.forEach((producto) => {
@@ -224,12 +247,12 @@ if(window.location.pathname == '/html/shop.html'){
         });
         cardProductContador.innerText = `Buy ${cart.length} products`;
         ////////////////////////////////////////////////////////////////////////////////
-        console.log(
-            cart.reduce((acc, product) => acc + product.price, 0)
-        );
-        console.log(
-            cart.map(item => item.price)
-        );
+        // console.log(
+        //     cart.reduce((acc, product) => acc + product.price, 0)
+        // );
+        // console.log(
+        //     cart.map(item => item.price)
+        // );
         totalPrice.innerText = cart.reduce((acc, product) => acc + product.price, 0);
         
         // let totalAmountFinal = cart.map(item => item.price).reduce((acc, product) => acc + product, 0);
@@ -280,10 +303,9 @@ if(window.location.pathname == '/html/shop.html'){
     //FALTA HACER:
     //arreglar total amount del carrito
     //arreglar botones eliminar productos individules carrito
+
     //hacer JS indice filtros shop
-        //Ideas indice filtros:
-        //asignar propiedades de x objeto.id a x cards.id de html. Así cada card tendrá categorias, id y demás propiedades
-        //si coincide categoria de indice + categoria del card = mostrar éstos coincidentes
+        //click en see all, mostrar todos los objetos del stockProductos
 
 }; //END (SHOP PAGE)
 
