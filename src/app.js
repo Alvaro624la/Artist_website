@@ -146,8 +146,17 @@ if(window.location.pathname == '/html/shop.html'){
 
     filtrosArr.forEach((filtro)=>{
         filtro.addEventListener('click', (e)=>{
-            let prodFiltrados = [];
-            prodFiltrados = stockProductos.filter((producto)=>{
+            console.clear();
+
+            //////////////////////////¿Como hacer que no se dulpiquen las "cards" o productos con éste evento?//////////////////////////
+            console.log(productContainer.childNodes.length);
+            // productContainer.childNodes.length = 7;
+
+            // let prodFiltrados = [];
+            // prodFiltrados.length = 0;
+            //////////////////////////¿Como hacer que no se dulpiquen las "cards" o productos con éste evento?//////////////////////////
+            
+            let prodFiltrados = stockProductos.filter((producto)=>{
                     if(producto.category == e.target.id){
                         return true;
                     } else {
@@ -156,50 +165,55 @@ if(window.location.pathname == '/html/shop.html'){
                 });
             console.log(prodFiltrados);
 
-            // if(e.target.id == 'seeAll'){
-            //     e.preventDefault();
-            //     prodFiltrados = stockProductos;
-            // } else{};
+            if(e.target.id == 'seeAll'){
+                e.preventDefault();
+                prodFiltrados = stockProductos;
+            } else{};
+
+////////////////////ÉSTO AQUÍ DENTRO ESTÁ BIEN PUESTO?//////////////////////////
+            prodFiltrados.forEach((producto) => {
+                const li = document.createElement('li');
+                    const divImg = document.createElement('div');
+                        const img = document.createElement('img');
+                    const divDesc = document.createElement('div');
+                        const pName = document.createElement('p');
+                        const pSize = document.createElement('p');
+                        const pPrice = document.createElement('p');
+        
+                li.classList.add('shop__main__grid-1__shop-cont__card');
+                    divImg.classList.add('shop__main__grid-1__shop-cont__card__img-cont');
+                    divDesc.classList.add('shop__main__grid-1__shop-cont__card__description-cont');
+                        pName.classList.add('shop__main__grid-1__shop-cont__card__description-cont__name');
+                        pSize.classList.add('shop__main__grid-1__shop-cont__card__description-cont__size');
+                        pPrice.classList.add('shop__main__grid-1__shop-cont__card__description-cont__price');
+        
+                divImg.innerHTML = `<img id="${producto.id}" class='shop__main__grid-1__shop-cont__card__img-cont__img' src=${producto.img} alt="${producto.name} image">`;
+                pName.innerHTML = `<p>${producto.name}</p>`
+                pSize.innerHTML = `<p>${producto.size}</p>`
+                pPrice.innerHTML = `<p>${producto.price}€</p>`
+                li.innerHTML = `<button id="add${producto.id}" class="shop__main__grid-1__shop-cont__card__img-cont__add-btn">Add to cart</button>`;
+                
+                productContainer.appendChild(li);
+                li.appendChild(divImg);
+                li.appendChild(divDesc);
+                divDesc.appendChild(pName);
+                divDesc.appendChild(pSize);
+                divDesc.appendChild(pPrice);
+        
+                const btn = document.getElementById(`add${producto.id}`);
+                
+                btn.addEventListener('click', ()=>{
+                    addToCart(producto.id);
+                });
+        
+            });
+////////////////////ÉSTO AQUÍ DENTRO ESTÁ BIEN PUESTO?//////////////////////////
+
 
         });
     });
 
-    stockProductos.forEach((producto) => {
-        const li = document.createElement('li');
-            const divImg = document.createElement('div');
-                const img = document.createElement('img');
-            const divDesc = document.createElement('div');
-                const pName = document.createElement('p');
-                const pSize = document.createElement('p');
-                const pPrice = document.createElement('p');
-
-        li.classList.add('shop__main__grid-1__shop-cont__card');
-            divImg.classList.add('shop__main__grid-1__shop-cont__card__img-cont');
-            divDesc.classList.add('shop__main__grid-1__shop-cont__card__description-cont');
-                pName.classList.add('shop__main__grid-1__shop-cont__card__description-cont__name');
-                pSize.classList.add('shop__main__grid-1__shop-cont__card__description-cont__size');
-                pPrice.classList.add('shop__main__grid-1__shop-cont__card__description-cont__price');
-
-        divImg.innerHTML = `<img id="${producto.id}" class='shop__main__grid-1__shop-cont__card__img-cont__img' src=${producto.img} alt="${producto.name} image">`;
-        pName.innerHTML = `<p>${producto.name}</p>`
-        pSize.innerHTML = `<p>${producto.size}</p>`
-        pPrice.innerHTML = `<p>${producto.price}€</p>`
-        li.innerHTML = `<button id="add${producto.id}" class="shop__main__grid-1__shop-cont__card__img-cont__add-btn">Add to cart</button>`;
-        
-        productContainer.appendChild(li);
-        li.appendChild(divImg);
-        li.appendChild(divDesc);
-        divDesc.appendChild(pName);
-        divDesc.appendChild(pSize);
-        divDesc.appendChild(pPrice);
-
-        const btn = document.getElementById(`add${producto.id}`);
-        
-        btn.addEventListener('click', ()=>{
-            addToCart(producto.id);
-        });
-
-    });
+    
 
     const addToCart = (productId) => {
         const exists = cart.some(product => product.id === productId)
