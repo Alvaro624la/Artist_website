@@ -205,8 +205,13 @@
                                 align-items: center;
                                 line-height: 50px;
 
-                                &__cart-imgs{
+                                &__cart-imgs--cart{
                                     transform: translateY(23%);
+                                    // border: 2px groove transparent;
+
+                                    // &__active{
+                                    //     border: 2px groove green;
+                                    // }
                                 }
                                 
                                 &__delete-product{

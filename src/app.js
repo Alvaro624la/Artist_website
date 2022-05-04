@@ -94,6 +94,7 @@ if(window.location.pathname == '/html/shop.html'){
 
     // CARRITO ONLY JAVASCRIPT (video: https://www.youtube.com/watch?v=Mm3iLqhZB1A&ab_channel=GCode)
     const productContainer = document.getElementById('shop-cont');
+    // const productContainer2 = document.getElementsByClassName('shop__main__grid-1__shop-cont__card');
     
     const cartContainer = document.getElementById('cartContainer');
    
@@ -122,22 +123,13 @@ if(window.location.pathname == '/html/shop.html'){
     //clear cart btn
     clearCartBtn.addEventListener('click', ()=>{
         cart.length = 0;
-        cart.cantidad = 0;
+        cart.quantity = 0;
         actualizarCarrito();
     });
 
     //FILTRAR PRODUCTOS
-    // console.log(stockProductos);
     //VARIABLES
     let filtros = document.getElementsByClassName('shop__main__grid-1__nav-cont__ul__index-one__index-two');
-
-    const seeAll = document.getElementById('seeAll');
-    const nature = document.getElementById('nature');
-        // const animals = document.getElementById('animals');
-        // const landscapes = document.getElementById('landscapes');
-    const sculptures = document.getElementById('sculptures');
-    const models = document.getElementById('models');
-    const oil = document.getElementById('oil');
 
     const frame = document.getElementById('frame');
     const noFrame = document.getElementById('noFrame');
@@ -147,14 +139,7 @@ if(window.location.pathname == '/html/shop.html'){
     filtrosArr.forEach((filtro)=>{
         filtro.addEventListener('click', (e)=>{
             console.clear();
-
-            //////////////////////////¿Como hacer que no se dulpiquen las "cards" o productos con éste evento?//////////////////////////
-            console.log(productContainer.childNodes.length);
-            // productContainer.childNodes.length = 7;
-
-            // let prodFiltrados = [];
-            // prodFiltrados.length = 0;
-            //////////////////////////¿Como hacer que no se dulpiquen las "cards" o productos con éste evento?//////////////////////////
+            productContainer.innerHTML = ""; //ESTOY BORRANDO EL BTN DEL CARRITO CON ""(arreglar)
             
             let prodFiltrados = stockProductos.filter((producto)=>{
                     if(producto.category == e.target.id){
@@ -164,13 +149,13 @@ if(window.location.pathname == '/html/shop.html'){
                     }
                 });
             console.log(prodFiltrados);
-
             if(e.target.id == 'seeAll'){
                 e.preventDefault();
-                prodFiltrados = stockProductos;
-            } else{};
+                prodFiltrados = stockProductos; //MOSTRAR TODO AL NO SELECCIONAR NADA O CARGAR LA PAGINA
+            };
+            
 
-////////////////////ÉSTO AQUÍ DENTRO ESTÁ BIEN PUESTO?//////////////////////////
+            //CREAR PRODUCTOS JS (TARGETAS/CARDS)
             prodFiltrados.forEach((producto) => {
                 const li = document.createElement('li');
                     const divImg = document.createElement('div');
@@ -205,121 +190,135 @@ if(window.location.pathname == '/html/shop.html'){
                 btn.addEventListener('click', ()=>{
                     addToCart(producto.id);
                 });
-        
             });
-////////////////////ÉSTO AQUÍ DENTRO ESTÁ BIEN PUESTO?//////////////////////////
+
+            //VER IMAGEN EN GRANDE
+            //VARIABLES
+            const MAIN = document.getElementById('main');
+            let prod = document.getElementsByClassName('shop__main__grid-1__shop-cont__card__img-cont__img');
+            //FUNCIONES
+            function biggerImgs(){
+                for(let i = 0; i <= prod.length -1; i++){
+                    prod[i].addEventListener('click', (event)=>{
+                        let bigImgCont = document.createElement('div');
+                        let bigImgInside = document.createElement('img');
+
+                        MAIN.appendChild(bigImgCont);
+                        bigImgCont.appendChild(bigImgInside);
+                        
+                        bigImgCont.className = 'biggerImgCont';
+                        bigImgInside.className = 'biggerImgCont__img-inside';
+                        bigImgInside.src = (prodFiltrados[i].originalImg);
+
+                        document.addEventListener('click', function removeChild(e){
+                            if(e.target.classList != 'shop__main__grid-1__shop-cont__card__img-cont__img'){
+                                bigImgCont.parentNode.removeChild(bigImgCont);
+                                document.removeEventListener('click', removeChild);
+                            };
+                        });
+                    });
+                    
+                };
+            };
+            biggerImgs();
+
+
 
 
         });
     });
 
-    
 
     const addToCart = (productId) => {
         const exists = cart.some(product => product.id === productId)
-
+        
         if(exists){
             const product = cart.map(product=>{
                 if(product.id === productId){
-                    product.cantidad++;
-                }
+                    product.quantity++;
+                    //////////////////////////////////////////////////FALTA HACER///////////////////////////////////////////////////////////
+                    // let nTotal = Object.values(product).reduce((acc, {quantity, price}) => acc + quantity * price, 0);
+                    // product.price = nTotal;
+
+                    // console.log(product);
+                    // console.log(nTotal);
+                    //////////////////////////////////////////////////FALTA HACER///////////////////////////////////////////////////////////                
+                };
             })
         } else {
 
         const item = stockProductos.find((product) => product.id === productId);
         cart.push(item);
-        // console.log(cart);
         }
         actualizarCarrito();
     }
     ///////////////////////////////////FALTA HACER/////////////////////////////////////////////
-    const deleteProductCart = (productId) => {
-        const item = cart.find((product) => product.id === productId);
-        const indice = cart.indexOf(item);
-        cart.splice(indice, 1)
-        actualizarCarrito();
-    };
+    // const delItemCardBtn = document.getElementById('delete-item-card-btn');
+    // delItemCardBtn.addEventListener('click', (productId) => {
+    //     const item = cart.find((product) => product.id === productId);
+    //     const indice = cart.indexOf(item);
+    //     cart.splice(indice, 1)
+    //     actualizarCarrito();
+    // });
+    
+    // const deleteProductCart = (productId) => {
+    //     const item = cart.find((product) => product.id === productId);
+    //     const indice = cart.indexOf(item);
+    //     cart.splice(indice, 1)
+    //     actualizarCarrito();
+    // };
     ///////////////////////////////////FALTA HACER/////////////////////////////////////////////
     //CART
     const actualizarCarrito = () => {
         cartContainer.innerHTML = "";
 
         cart.forEach((product) => {
-            // console.log(product);
             const div = document.createElement('div');
             div.className = ('shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products');
             div.innerHTML = `
-            <p><img class="shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__cart-imgs" src="${product.img}" style="width:20px;"> ${product.cantidad}</p>
+            <p><img class="shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__cart-imgs--cart" src="${product.img}" style="width:20px;"> ${product.quantity}</p>
             <p>${product.name}</p>
             <p>${product.price}€</p>
             <!--<p>${product.size}</p>-->
-            <button onclick="deleteProductCart(${product.id})" class="shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__delete-product">🗑️</button>
+            <button onclick="deleteProductCart(${product.id})" id="delete-item-card-btn(${product.id})" class="shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__delete-product">🗑️</button>
             `;
             cartContainer.appendChild(div);
 
             localStorage.setItem('cart', JSON.stringify(cart));
-        });
-        cardProductContador.innerText = `Buy ${cart.length} products`;
-        ////////////////////////////////////////////////////////////////////////////////
-        // console.log(
-        //     cart.reduce((acc, product) => acc + product.price, 0)
-        // );
-        // console.log(
-        //     cart.map(item => item.price)
-        // );
-        totalPrice.innerText = cart.reduce((acc, product) => acc + product.price, 0);
-        
-        // let totalAmountFinal = cart.map(item => item.price).reduce((acc, product) => acc + product, 0);
 
-        // let sumaTotal = 0;
-        // let onlyNumArr = totalPrice.innerText = cart.map(item => item.price); //[70, 50, 49...]
-        // onlyNumArr.forEach((num)=>{
-        //     sumaTotal += num;
-        // });
-        // totalPrice.textContent = sumaTotal;
-    };
-
-    //VER IMAGEN EN GRANDE
-    //VARIABLES
-    const MAIN = document.getElementById('main');
-    let prod = document.getElementsByClassName('shop__main__grid-1__shop-cont__card__img-cont__img');
-    //FUNCIONES
-    function biggerImgs(){
-        for(let i = 0; i <= prod.length -1; i++){
-            // console.log(prod[i]);
-            prod[i].addEventListener('click', (event)=>{
-                // console.log(event.target);
-                // console.log(stockProductos[i].originalImg);
-                let bigImgCont = document.createElement('div');
-                let bigImgInside = document.createElement('img');
-
-                MAIN.appendChild(bigImgCont);
-                bigImgCont.appendChild(bigImgInside);
-                
-                bigImgCont.className = 'biggerImgCont';
-                bigImgInside.className = 'biggerImgCont__img-inside';
-                bigImgInside.src = (stockProductos[i].originalImg);
-
-                document.addEventListener('click', function removeChild(e){
-                    // console.log(e.target.classList);
-                    if(e.target.classList != 'shop__main__grid-1__shop-cont__card__img-cont__img'){
-                        bigImgCont.parentNode.removeChild(bigImgCont);
-                        document.removeEventListener('click', removeChild);
-                        // console.log('Click fuera');
-                    };
-                });
-            });
             
-        };
+        });
+        
+        //MARCO O NO - EN EL CARRITO CON CLICK A LAS IMGs
+        //MOVER DE SITIO
+        //REESTRUCTURAR FUNCIONAMIENTO
+        // const cartImgFrame = document.getElementsByClassName('shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__cart-imgs--cart');
+        // for(let i = 0; i <= cartImgFrame.length -1; i++){
+        //     cartImgFrame[i].addEventListener('click', (event)=>{
+        //         document.addEventListener('click', (e)=>{
+        //             console.log(e.target);
+        //             e.target.classList.toggle('shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__cart-imgs--cart__active');
+        //         });
+        //     });
+        // };
+
+        cardProductContador.innerText = `Buy ${cart.length} products`;
+
+        totalPrice.innerText = cart.reduce((acc, product) => acc + product.price, 0);
     };
-    biggerImgs();
+
+    
 
     //FALTA HACER:
-    //arreglar total amount del carrito
-    //arreglar botones eliminar productos individules carrito
+    //arreglar botones eliminar productos individules carrito.
+    //total amount.
+    //filtrado(al filtrar se han creado problemas con el código).
+    //añadir boton frame o noFrame al carrito individuales (   console.log(frame.checked);   ).
 
-    //hacer JS indice filtros shop
-        //click en see all, mostrar todos los objetos del stockProductos
+    //Avanzado:
+        //poder seleccionar cuanta de x cantidad, tienen frame o no.
+        //posteriormente almacenar si tiene frame o no x elementos individualmente.
+        //
 
 }; //END (SHOP PAGE)
 

@@ -410,7 +410,7 @@
   align-items: center;
   line-height: 50px;
 }
-.shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__cart-imgs {
+.shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__cart-imgs--cart {
   transform: translateY(23%);
 }
 .shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__delete-product {
