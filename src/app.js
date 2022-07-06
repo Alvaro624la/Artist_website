@@ -1,4 +1,33 @@
+// ----------- JSX --------------:
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import home from '../paginas/home';
+import shop from '../paginas/shop';
+import about from '../paginas/about';
+import contact from '../paginas/contact';
+import cart from '../paginas/cart';
+// ----------- JSX --------------.
+
 import {stockProductos} from "./modulos/stockproductos.js";
+
+// ----------- JSX --------------:
+
+const APP = () => {
+    return(
+        <>
+            <Main>
+                <Routes>
+                    <Route path="/" element={<home />}/>
+                    <Route path="/shop" element={<shop />}/>
+                    <Route path="/about" element={<about />}/>
+                    <Route path="/contact" element={<contact />}/>
+                </Routes>
+            </Main>
+        </>
+    );
+}
+
+// ----------- JSX --------------.
 
 // ALL HTML PAGES
 //HAMBURGUER NAVBAR BTN
