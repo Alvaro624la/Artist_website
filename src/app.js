@@ -21,8 +21,8 @@ for (var i = 0; i < navLink.length; i++) {
 }
 
 
-//HOME (/html/home.html)
-if(window.location.pathname == '/html/home.html'){
+//HOME (/html/index.html)
+if(window.location.pathname == '/html/index.html'){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
     //CAROUSEL
@@ -130,7 +130,10 @@ if(window.location.pathname == '/html/shop.html'){
         actualizarCarrito();
     });
 
-    //MOSTRAR TODO AL CARGAR LA PÁGINA
+
+
+
+    //CREAR PRODUCTOS JS (TARGETAS/CARDS) - antes de filtrar
     stockProductos.forEach((producto) => {
         const li = document.createElement('li');
             const divImg = document.createElement('div');
@@ -164,10 +167,10 @@ if(window.location.pathname == '/html/shop.html'){
         
         btn.addEventListener('click', ()=>{
             addToCart(producto.id);
-            i++;
         });
     });
-    //VER IMAGEN EN GRANDE AL CARGAR LA PÁGINA
+
+    //VER IMAGEN EN GRANDE
     //VARIABLES
     const MAIN = document.getElementById('main');
     let prod = document.getElementsByClassName('shop__main__grid-1__shop-cont__card__img-cont__img');
@@ -197,7 +200,6 @@ if(window.location.pathname == '/html/shop.html'){
     };
     biggerImgs();
 
-    //AL CLICKAR EN EL MENU PARA FILTRAR LA BÚSQUEDA
     //FILTRAR PRODUCTOS
     //VARIABLES
     let filtros = document.getElementsByClassName('shop__main__grid-1__nav-cont__ul__index-one__index-two');
@@ -208,7 +210,9 @@ if(window.location.pathname == '/html/shop.html'){
     let filtrosArr = Array.from(filtros);
     filtrosArr.forEach((filtro)=>{
         filtro.addEventListener('click', (e)=>{
+            console.clear();
             productContainer.innerHTML = "";
+            
             let prodFiltrados = stockProductos.filter((producto)=>{
                     if(producto.category == e.target.id){
                         return true;
