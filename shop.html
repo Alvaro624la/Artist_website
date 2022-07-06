@@ -4,26 +4,18 @@
     <meta charset="utf-8">
     <html lang="es-ES">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="author" content="Alvaro de Prado">
     <meta name="description" content="Buy Sarah's artistic works">
-
     <link rel="author" href="https://www.linkedin.com/in/%C3%A1lvaro-de-prado-calle-740062221/">
     <link rel="icon" sizes="64x64" href="https://www.svgrepo.com/show/52423/photo.svg">
-
-
     <!--GOOGLE FONTS (hx): font-family: 'Montserrat', sans-serif;-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
-
     <!--CSS-->
     <link href="app.css" type="text/css" rel="stylesheet">
-
     <!-- Bootstrap CSS -->
     <!-- <link href="../bootstrap.css" rel="stylesheet" crossorigin="anonymous"> -->
-
     <title>Shop</title>
 </head>
 <body id="body" class="shop">
@@ -77,170 +69,21 @@
             <div id="modalCart" class="shop__main__grid-1__shop-cont__modal-cart">
                 <!-- <a href="#" class="modal-cart__close"></a> --><!--for ONLY-CSS modal-->
                 <div class="shop__main__grid-1__shop-cont__modal-cart__content">
-
                     <div class="shop__main__grid-1__shop-cont__modal-cart__content__flex">
                         <p class="shop__main__grid-1__shop-cont__modal-cart__content__flex__p">Cart</p>
                         <button class="shop__main__grid-1__shop-cont__modal-cart__content__flex__button-close" id="cartClose" href="#">❌</button>
-                    </div>
-                    
+                    </div>                
                     <div id="cartContainer" class="shop__main__grid-1__shop-cont__modal-cart__content__cartContainer">
-                        <!--JS CART-PRODUCTS CONTENT-->
+                    <!--JS CART-PRODUCTS CONTENT-->
                     </div>
-
                     <p class="shop__main__grid-1__shop-cont__modal-cart__content__priceProduct">Total amount: <span id="totalPrice">0</span>€</p>
                     <button id="cleanCart" class="shop__main__grid-1__shop-cont__modal-cart__content__button-clear">Clear cart</button>
-
                 </div>
             </div>
             <ul class='shop__main__grid-1__shop-cont' id="shop-cont">
-                <!-- <li class='shop__main__grid-1__shop-cont__card' id="000001">
-                    <div class='shop__main__grid-1__shop-cont__card__img-cont' id="card-img-cont">
-                        <img class='shop__main__grid-1__shop-cont__card__img-cont__img'  src="../src/img/shop/monalisa.jpeg" alt="" id="card-img">
-                    </div>
-                    <div class='shop__main__grid-1__shop-cont__card__description-cont'>
-                        <p id="name" class='shop__main__grid-1__shop-cont__card__description-cont__name'>
-                            Monalisa
-                        </p>
-                        <p id="size" class='shop__main__grid-1__shop-cont__card__description-cont__size'>
-                            120x50cm
-                        </p>
-                        <p id="price" class='shop__main__grid-1__shop-cont__card__description-cont__price'>
-                            70€
-                        </p>
-                    </div>
-                </li>
-                <li class='shop__main__grid-1__shop-cont__card' id="000002">
-                    <div class='shop__main__grid-1__shop-cont__card__img-cont' id="card-img-cont">
-                        <img class='shop__main__grid-1__shop-cont__card__img-cont__img' src="../src/img/shop/cold.jpeg" alt="" id="card-img">
-                    </div>
-                    <div class='shop__main__grid-1__shop-cont__card__description-cont'>
-                        <p id="name" class='shop__main__grid-1__shop-cont__card__description-cont__name'>
-                            Cold
-                        </p>
-                        <p id="size" class='shop__main__grid-1__shop-cont__card__description-cont__size'>
-                            100x40cm
-                        </p>
-                        <p id="price" class='shop__main__grid-1__shop-cont__card__description-cont__price'>
-                            30€
-                        </p>
-                    </div>
-                </li>
-                <li class='shop__main__grid-1__shop-cont__card' id="000003">
-                    <div class='shop__main__grid-1__shop-cont__card__img-cont' id="card-img-cont">
-                        <img class='shop__main__grid-1__shop-cont__card__img-cont__img' src="../src/img/shop/extasis.jpeg" alt="" id="card-img">
-                    </div>
-                    <div class='shop__main__grid-1__shop-cont__card__description-cont'>
-                        <p id="name" class='shop__main__grid-1__shop-cont__card__description-cont__name'>
-                            Éxtasis
-                        </p>
-                        <p id="size" class='shop__main__grid-1__shop-cont__card__description-cont__size'>
-                            300x100cm
-                        </p>
-                        <p id="price" class='shop__main__grid-1__shop-cont__card__description-cont__price'>
-                            99€
-                        </p>
-                    </div>
-                </li>
-                <li class='shop__main__grid-1__shop-cont__card' id="000004">
-                    <div class='shop__main__grid-1__shop-cont__card__img-cont' id="card-img-cont">
-                        <img class='shop__main__grid-1__shop-cont__card__img-cont__img' src="../src/img/shop/mercredi.jpeg" alt="" id="card-img">
-                    </div>
-                    <div class='shop__main__grid-1__shop-cont__card__description-cont'>
-                        <p id="name" class='shop__main__grid-1__shop-cont__card__description-cont__name'>
-                            Mercredi
-                        </p>
-                        <p id="size" class='shop__main__grid-1__shop-cont__card__description-cont__size'>
-                            210x100cm
-                        </p>
-                        <p id="price" class='shop__main__grid-1__shop-cont__card__description-cont__price'>
-                            40€
-                        </p>
-                    </div>
-                </li>
-                <li class='shop__main__grid-1__shop-cont__card' id="000005">
-                    <div class='shop__main__grid-1__shop-cont__card__img-cont' id="card-img-cont">
-                        <img class='shop__main__grid-1__shop-cont__card__img-cont__img' src="../src/img/shop/where.jpeg" alt="" id="card-img">
-                    </div>
-                    <div class='shop__main__grid-1__shop-cont__card__description-cont'>
-                        <p id="name" class='shop__main__grid-1__shop-cont__card__description-cont__name'>
-                            Where
-                        </p>
-                        <p id="size" class='shop__main__grid-1__shop-cont__card__description-cont__size'>
-                            130x60cm
-                        </p>
-                        <p id="price" class='shop__main__grid-1__shop-cont__card__description-cont__price'>
-                            45€
-                        </p>
-                    </div>
-                </li>
-                <li class='shop__main__grid-1__shop-cont__card' id="000006">
-                    <div class='shop__main__grid-1__shop-cont__card__img-cont' id="card-img-cont">
-                        <img class='shop__main__grid-1__shop-cont__card__img-cont__img' src="../src/img/shop/universe.jpeg" alt="" id="card-img">
-                    </div>
-                    <div class='shop__main__grid-1__shop-cont__card__description-cont'>
-                        <p id="name" class='shop__main__grid-1__shop-cont__card__description-cont__name'>
-                            Universe
-                        </p>
-                        <p id="size" class='shop__main__grid-1__shop-cont__card__description-cont__size'>
-                            120x20cm
-                        </p>
-                        <p id="price" class='shop__main__grid-1__shop-cont__card__description-cont__price'>
-                            60€
-                        </p>
-                    </div>
-                </li>
-                <li class='shop__main__grid-1__shop-cont__card' id="000007">
-                    <div class='shop__main__grid-1__shop-cont__card__img-cont' id="card-img-cont">
-                        <img class='shop__main__grid-1__shop-cont__card__img-cont__img' src="../src/img/shop/gold.jpeg" alt="" id="card-img">
-                    </div>
-                    <div class='shop__main__grid-1__shop-cont__card__description-cont'>
-                        <p id="name" class='shop__main__grid-1__shop-cont__card__description-cont__name'>
-                            Gold
-                        </p>
-                        <p id="size" class='shop__main__grid-1__shop-cont__card__description-cont__size'>
-                            400x100cm
-                        </p>
-                        <p id="price" class='shop__main__grid-1__shop-cont__card__description-cont__price'>
-                            59€
-                        </p>
-                    </div>
-                </li>
-                <li class='shop__main__grid-1__shop-cont__card' id="000008">
-                    <div class='shop__main__grid-1__shop-cont__card__img-cont' id="card-img-cont">
-                        <img class='shop__main__grid-1__shop-cont__card__img-cont__img' src="../src/img/shop/no-longer.jpeg" alt="" id="card-img">
-                    </div>
-                    <div class='shop__main__grid-1__shop-cont__card__description-cont'>
-                        <p id="name" class='shop__main__grid-1__shop-cont__card__description-cont__name'>
-                            No longer
-                        </p>
-                        <p id="size" class='shop__main__grid-1__shop-cont__card__description-cont__size'>
-                            110x50cm
-                        </p>
-                        <p id="price" class='shop__main__grid-1__shop-cont__card__description-cont__price'>
-                            40€
-                        </p>
-                    </div>
-                </li>
-                <li class='shop__main__grid-1__shop-cont__card' id="000009">
-                    <div class='shop__main__grid-1__shop-cont__card__img-cont' id="card-img-cont">
-                        <img class='shop__main__grid-1__shop-cont__card__img-cont__img' src="../src/img/shop/beauty.jpeg" alt="" id="card-img">
-                    </div>
-                    <div class='shop__main__grid-1__shop-cont__card__description-cont'>
-                        <p id="name" class='shop__main__grid-1__shop-cont__card__description-cont__name'>
-                            Beauty
-                        </p>
-                        <p id="size" class='shop__main__grid-1__shop-cont__card__description-cont__size'>
-                            300x100cm
-                        </p>
-                        <p id="price" class='shop__main__grid-1__shop-cont__card__description-cont__price'>
-                            50€
-                        </p>
-                    </div>
-                </li> -->
             </ul>
         </article>
     </main>
-
     <script src="app.js" type="text/javascript"></script>
 </body>
 </html>
