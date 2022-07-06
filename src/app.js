@@ -22,7 +22,7 @@ for (var i = 0; i < navLink.length; i++) {
 
 
 //HOME (/html/index.html)
-if(window.location.pathname == '/html/home.html'){
+if(window.location.pathname == '/home.html'){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
     //CAROUSEL
