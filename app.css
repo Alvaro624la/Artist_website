@@ -827,6 +827,7 @@
 }
 .about__header {
   margin-top: 100px;
+  margin-bottom: 40px;
 }
 .about__header__title {
   font-size: 2em;

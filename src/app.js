@@ -20,9 +20,13 @@ for (var i = 0; i < navLink.length; i++) {
     navLink[i].addEventListener('click', removeActive);
 }
 
-
+console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 //HOME (/html/home.html)
-if(window.location.pathname == '/html/home.html'){
+if(
+    window.location.pathname == '/index.html' || 
+    window.location.pathname == '/Artist_website/index.html' ||
+    window.location.pathname == '/Artist_website'
+    ){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
     //CAROUSEL
@@ -89,7 +93,7 @@ if(window.location.pathname == '/html/home.html'){
 }; //END (HOME PAGE)
 
 //SHOP (/html/shop.html)
-if(window.location.pathname == '/html/shop.html'){
+if(window.location.pathname == '/html/shop.html' || window.location.pathname == '/Artist_website/html/shop.html'){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
     // CARRITO ONLY JAVASCRIPT (video: https://www.youtube.com/watch?v=Mm3iLqhZB1A&ab_channel=GCode)
@@ -117,7 +121,7 @@ if(window.location.pathname == '/html/shop.html'){
 
     //close cart btn
     closeCartBtn.addEventListener('click', () => {
-        window.location = "http://127.0.0.1:5500/html/shop.html#";
+        window.location = "http://127.0.0.1:5500/html/shop.html";
     });
 
     //clear cart btn
@@ -378,23 +382,11 @@ if(window.location.pathname == '/html/shop.html'){
         totalPrice.innerText = cart.reduce((acc, product) => acc + product.price, 0);
     };
 
-    
-
-    //FALTA HACER:
-    //arreglar botones eliminar productos individules carrito.
-    //total amount.
-    //filtrado(al filtrar se han creado problemas con el código).
-    //añadir boton frame o noFrame al carrito individuales (   console.log(frame.checked);   ).
-
-    //Avanzado:
-        //poder seleccionar cuanta de x cantidad, tienen frame o no.
-        //posteriormente almacenar si tiene frame o no x elementos individualmente.
-        //
 
 }; //END (SHOP PAGE)
 
 //ABOUT (/html/cart.html)
-if(window.location.pathname == '/html/cart.html'){
+if(window.location.pathname == '/html/cart.html' || window.location.pathname == '/Artist_website/html/cart.html'){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
 
@@ -403,7 +395,7 @@ if(window.location.pathname == '/html/cart.html'){
 }; //END (CART PAGE)
 
 //ABOUT (/html/about.html)
-if(window.location.pathname == '/html/about.html'){
+if(window.location.pathname == '/html/about.html' || window.location.pathname == '/Artist_website/html/about.html'){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
 
@@ -411,13 +403,26 @@ if(window.location.pathname == '/html/about.html'){
 };
 
 //CONTACT (/html/contact.html)
-if(window.location.pathname == '/html/contact.html'){
+if(window.location.pathname == '/html/contact.html' || window.location.pathname == '/Artist_website/html/contact.html'){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
 
 
 }; //END (CONTACT PAGE)
 
+    
+
+//FALTA HACER:
+    //imagen de "about" de menos tamaño (50KB o asi)
+    //close cart btn: Cambiar y hacer JS, que al clickar se cierre el modal, no que vaya a la window.location.
+    //arreglar botones eliminar productos individules carrito.
+    //total amount.
+    //filtrado(al filtrar se han creado problemas con el código).
+    //añadir boton frame o noFrame al carrito individuales (   console.log(frame.checked);   ).
+
+    //Avanzado:
+        //poder seleccionar cuanta de x cantidad, tienen frame o no.
+        //posteriormente almacenar si tiene frame o no x elementos individualmente.
 
 //Tareas/ideas pendientes:
 /*
