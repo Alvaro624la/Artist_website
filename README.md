@@ -5,15 +5,15 @@ ES - Página completa de una artista para la práctica de conocimientos, sobreto
 ## Content
 ES - Éste proyecto tiene 5 ramas:
 <br />
-### main es como el release, donde está el código funcional y la mayoria de veces más nuevo.
+*main es como el release, donde está el código funcional y la mayoria de veces más nuevo.
 <br />
-#### all-for-GHpages es donde hago todos los cambios que afectan de alguna manera a GHpages para luego hacer merge con **main**.
+*all-for-GHpages es donde hago todos los cambios que afectan de alguna manera a GHpages para luego hacer merge con **main**.
 <br />
-##### ~basic-for-GHpages~ (rama inutilizada) es una adaptacion sin modulos, librerias, npm...solo copiar y pegar mi propio código final, para mostrarlo por GHpages.
+*~basic-for-GHpages~ (rama inutilizada) es una adaptacion sin modulos, librerias, npm...solo copiar y pegar mi propio código final, para mostrarlo por GHpages.
 <br />
-###### phpson pruebas que hice para ver si aprendia a hacer una plantilla PHP para juntar todos los archivos HTML.
+*php son pruebas que hice para ver si aprendia a hacer una plantilla PHP para juntar todos los archivos HTML.
 <br />
-###### react+jsx son pruebas que hice para ver si aprendia a hacer una plantilla JS con REACT para juntar todos los archivos HTML.
+*react+jsx son pruebas que hice para ver si aprendia a hacer una plantilla JS con REACT para juntar todos los archivos HTML.
 <br /><br />
 <!-- EN - This project has two branches: main and bundle-js-bien. **main** contains the tests of the repositories and **bundle-js-bien** contains the test of the use cases. -->
 
