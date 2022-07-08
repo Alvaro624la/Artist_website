@@ -25,7 +25,7 @@ console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 if(
     window.location.pathname == '/index.html' || 
     window.location.pathname == '/Artist_website/index.html' ||
-    window.location.pathname == '/Artist_website'
+    window.location.pathname == '/Artist_website/'
     ){
     console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
