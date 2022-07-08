@@ -30,10 +30,10 @@ for (var i = 0; i < navLink.length; i++) {
     navLink[i].addEventListener('click', removeActive);
 }
 
-
+console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 //HOME (/html/home.html)
-if(window.location.pathname == '/index.html'){
-    console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
+if(window.location.pathname == '/Artist_website/index.html' || window.location.pathname == '/Artist_website/'){
+   console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
     //CAROUSEL
     //VARIABLES
@@ -99,8 +99,8 @@ if(window.location.pathname == '/index.html'){
 }; //END (HOME PAGE)
 
 //SHOP (/html/shop.html)
-if(window.location.pathname == '/shop.html'){
-    console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
+if(window.location.pathname == '/Artist_website/shop.html'){
+   console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
     // CARRITO ONLY JAVASCRIPT (video: https://www.youtube.com/watch?v=Mm3iLqhZB1A&ab_channel=GCode)
     const productContainer = document.getElementById('shop-cont');
@@ -404,8 +404,8 @@ if(window.location.pathname == '/shop.html'){
 }; //END (SHOP PAGE)
 
 //ABOUT (/html/cart.html)
-if(window.location.pathname == '/cart.html'){
-    console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
+if(window.location.pathname == '/Artist_website/cart.html'){
+   console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
 
 
@@ -413,16 +413,16 @@ if(window.location.pathname == '/cart.html'){
 }; //END (CART PAGE)
 
 //ABOUT (/html/about.html)
-if(window.location.pathname == '/about.html'){
-    console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
+if(window.location.pathname == '/Artist_website/about.html'){
+   console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
 
 
 };
 
 //CONTACT (/html/contact.html)
-if(window.location.pathname == '/contact.html'){
-    console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
+if(window.location.pathname == '/Artist_website/contact.html'){
+   console.log(`Estás en el w.l.pathname --> ${window.location.pathname}`);
 
 
 
