@@ -5,7 +5,7 @@ ES - Página completa de una artista para la práctica de conocimientos, sobreto
 ## Content
 ES - Éste proyecto tiene 5 ramas:
 <br />
-**main** es como el release, donde está el código funcional y la mayoria de veces más nuevo.
+* **main** es como el release, donde está el código funcional y la mayoria de veces más nuevo.
 <br />
 **all-for-GHpages** es donde hago todos los cambios que afectan de alguna manera a GHpages para luego hacer merge con **main**.
 <br />
