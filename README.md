@@ -4,7 +4,7 @@ ES - Página completa de una artista para la práctica de conocimientos, sobreto
 
 ## Content
 ES - Éste proyecto tiene 5 ramas:
-**main** es como el release, donde está el código funcional y la mayoria de veces más nuevo. — 
+**main** es como el release, donde está el código funcional y la mayoria de veces más nuevo. <br />
 **all-for-GHpages** es donde hago todos los cambios que afectan de alguna manera a GHpages para luego hacer merge con **main**.
 **basic-for-GHpages** (rama inutilizada) es una adaptacion sin modulos, librerias, npm...solo copiar y pegar mi propio código final, para mostrarlo por GHpages.
 **php** son pruebas que hice para ver si aprendia a hacer una plantilla PHP para juntar todos los archivos HTML.
