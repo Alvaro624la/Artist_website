@@ -9,7 +9,7 @@ ES - Éste proyecto tiene 5 ramas:
 <br />
 * **all-for-GHpages** es donde hago todos los cambios que afectan de alguna manera a GHpages para luego hacer merge con **main**.
 <br />
-* **basic-for-GHpages** (rama inutilizada) es una adaptacion sin modulos, librerias, npm...solo copiar y pegar mi propio código final, para mostrarlo por GHpages.
+* **~basic-for-GHpages** (rama inutilizada) es una adaptacion sin modulos, librerias, npm...solo copiar y pegar mi propio código final, para mostrarlo por GHpages.
 <br />
 *  **php** son pruebas que hice para ver si aprendia a hacer una plantilla PHP para juntar todos los archivos HTML.
 <br />
