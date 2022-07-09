@@ -434,5 +434,4 @@ if(window.location.pathname == '/html/contact.html' || window.location.pathname 
     CART.html
         -   Mostrar el array de objetos añadidos desde SHOP al carrito
 
-
 */
