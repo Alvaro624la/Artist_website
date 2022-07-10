@@ -413,7 +413,6 @@ if(window.location.pathname == '/html/contact.html' || window.location.pathname 
     
 
 //FALTA HACER:
-    //imagen de "about" de menos tamaño (50KB o asi)
     //close cart btn: Cambiar y hacer JS, que al clickar se cierre el modal, no que vaya a la window.location.
     //arreglar botones eliminar productos individules carrito.
     //total amount.
