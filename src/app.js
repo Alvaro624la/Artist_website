@@ -101,7 +101,7 @@ if(window.location.pathname == '/html/shop.html' || window.location.pathname == 
     // const productContainer2 = document.getElementsByClassName('shop__main__grid-1__shop-cont__card');
     
     const cartContainer = document.getElementById('cartContainer');
-   
+
     const closeCartBtn = document.getElementById('cartClose');
     const clearCartBtn = document.getElementById('cleanCart');
 
@@ -119,9 +119,10 @@ if(window.location.pathname == '/html/shop.html' || window.location.pathname == 
         }
     });
 
-    //close cart btn
+    //close cart btn (usa :target para bajar de top el modal cart go-cart-btn)
+    //apaño temporal:    
     closeCartBtn.addEventListener('click', () => {
-        window.location = "http://127.0.0.1:5500/html/shop.html";
+        window.location = "http://127.0.0.1:5500/html/shop.html"; 
     });
 
     //clear cart btn
@@ -303,25 +304,19 @@ if(window.location.pathname == '/html/shop.html' || window.location.pathname == 
         });
     });
 
-
     const addToCart = (productId) => {
         const exists = cart.some(product => product.id === productId)
         
         if(exists){
             const product = cart.map(product=>{
                 if(product.id === productId){
+                    //funcionamiento: reinicio el precio a original solo si la cantidad es mayor a 1, para volver a reiniciar el ciclo de, sumar 1 a cantidad, y volver a multiplicar el precio por esa nueva cantidad. Luego, otra vez igual, reinicio precio dividiendo por la ultima cantidad, sumo 1 a cantidad...etc bucle.
+                    if(product.quantity > 1)product.price=product.price / product.quantity; 
                     product.quantity++;
-                    //////////////////////////////////////////////////FALTA HACER///////////////////////////////////////////////////////////
-                    // let nTotal = Object.values(product).reduce((acc, {quantity, price}) => acc + quantity * price, 0);
-                    // product.price = nTotal;
-
-                    // console.log(product);
-                    // console.log(nTotal);
-                    //////////////////////////////////////////////////FALTA HACER///////////////////////////////////////////////////////////                
+                    product.price=product.price*product.quantity;              
                 };
             })
         } else {
-
         const item = stockProductos.find((product) => product.id === productId);
         cart.push(item);
         }
@@ -336,12 +331,12 @@ if(window.location.pathname == '/html/shop.html' || window.location.pathname == 
     //     actualizarCarrito();
     // });
     
-    // const deleteProductCart = (productId) => {
-    //     const item = cart.find((product) => product.id === productId);
-    //     const indice = cart.indexOf(item);
-    //     cart.splice(indice, 1)
-    //     actualizarCarrito();
-    // };
+    const deleteProductCart = (productId) => {
+        const item = cart.find((product) => product.id === productId);
+        const indice = cart.indexOf(item);
+        cart.splice(indice, 1)
+        actualizarCarrito();
+    };
     ///////////////////////////////////FALTA HACER/////////////////////////////////////////////
     //CART
     const actualizarCarrito = () => {
