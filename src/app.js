@@ -121,14 +121,13 @@ if(window.location.pathname == '/html/shop.html' || window.location.pathname == 
 
     //close cart btn (usa :target para bajar de top el modal cart go-cart-btn)
     //apaño temporal:    
-    closeCartBtn.addEventListener('click', () => {
-        window.location = "http://127.0.0.1:5500/html/shop.html"; 
+    closeCartBtn.addEventListener('click', (e) => {
+        e.target.parentNode.parentNode.parentNode.style.top = '-100%';
     });
 
     //clear cart btn
     clearCartBtn.addEventListener('click', ()=>{
         cart.length = 0;
-        cart.quantity = 0;
         actualizarCarrito();
     });
 
@@ -169,6 +168,8 @@ if(window.location.pathname == '/html/shop.html' || window.location.pathname == 
         
         btn.addEventListener('click', ()=>{
             addToCart(producto.id);
+            cardProductContador.style.backgroundColor = 'rgb(0, 156, 0)';
+            window.setTimeout(()=>cardProductContador.style.backgroundColor = 'rgb(0, 0, 0)', 250);
         });
     });
 
@@ -317,8 +318,8 @@ if(window.location.pathname == '/html/shop.html' || window.location.pathname == 
                 };
             })
         } else {
-        const item = stockProductos.find((product) => product.id === productId);
-        cart.push(item);
+            const item = stockProductos.find((product) => product.id === productId);
+            cart.push(item);
         }
         actualizarCarrito();
     }
@@ -331,17 +332,18 @@ if(window.location.pathname == '/html/shop.html' || window.location.pathname == 
     //     actualizarCarrito();
     // });
     
-    const deleteProductCart = (productId) => {
-        const item = cart.find((product) => product.id === productId);
-        const indice = cart.indexOf(item);
-        cart.splice(indice, 1)
-        actualizarCarrito();
-    };
+    // const deleteProductCart = (productId) => {
+        // console.log('a');
+    //     cart.splice(cart.indexOf((cart.find((product) => product.id === productId))), 1);
+    //     // const item = cart.find((product) => product.id === productId);
+    //     // const indice = cart.indexOf(item);
+    //     // cart.splice(indice, 1)
+    //     // actualizarCarrito();
+    // };
     ///////////////////////////////////FALTA HACER/////////////////////////////////////////////
     //CART
     const actualizarCarrito = () => {
         cartContainer.innerHTML = "";
-
         cart.forEach((product) => {
             const div = document.createElement('div');
             div.className = ('shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products');
@@ -350,14 +352,11 @@ if(window.location.pathname == '/html/shop.html' || window.location.pathname == 
             <p>${product.name}</p>
             <p>${product.price}€</p>
             <!--<p>${product.size}</p>-->
-            <button onclick="deleteProductCart(${product.id})" id="delete-item-card-btn(${product.id})" class="shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__delete-product">🗑️</button>
+            <!--<button onclick="deleteProductCart()"  id="delete-item-card-btn(${product.id})"class="shop__main__grid-1__shop-cont__modal-cart__content__cartContainer__products__delete-product">🗑️</button>-->
             `;
             cartContainer.appendChild(div);
-
-            localStorage.setItem('cart', JSON.stringify(cart));
-
-            
         });
+        localStorage.setItem('cart', JSON.stringify(cart));
         
         //MARCO O NO - EN EL CARRITO CON CLICK A LAS IMGs
         //MOVER DE SITIO
@@ -373,6 +372,9 @@ if(window.location.pathname == '/html/shop.html' || window.location.pathname == 
         // };
 
         cardProductContador.innerText = `Buy ${cart.length} products`;
+        cardProductContador.addEventListener('click', (e)=>{
+            e.target.parentNode.childNodes[7].style.top = '30%';
+        });
 
         totalPrice.innerText = cart.reduce((acc, product) => acc + product.price, 0);
     };
